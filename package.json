@@ -4,14 +4,14 @@
   "type": "module",
   "description": "Community MCP tools inspired by Apple's HIG, helping developers apply Apple's design guidance effectively.",
   "license": "MIT",
-  "author": "Yord (yord-dev)",
+  "author": "Yord (yordcode)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yord-dev/apple-hig-mcp.git"
+    "url": "git+https://github.com/yordcode/apple-hig-mcp.git"
   },
-  "homepage": "https://github.com/yord-dev/apple-hig-mcp#readme",
+  "homepage": "https://github.com/yordcode/apple-hig-mcp#readme",
   "bugs": {
-    "url": "https://github.com/yord-dev/apple-hig-mcp/issues"
+    "url": "https://github.com/yordcode/apple-hig-mcp/issues"
   },
   "keywords": [
     "mcp",

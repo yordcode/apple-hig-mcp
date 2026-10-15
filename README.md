@@ -13,14 +13,14 @@ Requires Node.js 20 or newer and Git on your `PATH`. The plugin includes the bui
 **Claude Code** — run these as separate commands inside Claude Code:
 
 ```text
-/plugin marketplace add yord-dev/apple-hig-mcp
+/plugin marketplace add yordcode/apple-hig-mcp
 /plugin install hig@hig
 ```
 
 **Codex** — run these in your terminal:
 
 ```bash
-codex plugin marketplace add yord-dev/apple-hig-mcp
+codex plugin marketplace add yordcode/apple-hig-mcp
 codex plugin add hig@hig
 ```
 
@@ -35,7 +35,7 @@ Start with the **[step-by-step setup and usage guide](docs/GETTING_STARTED.md)**
 Requires Node.js 20 or newer.
 
 ```bash
-git clone https://github.com/yord-dev/apple-hig-mcp.git
+git clone https://github.com/yordcode/apple-hig-mcp.git
 cd apple-hig-mcp
 npm ci
 npm run build

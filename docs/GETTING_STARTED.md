@@ -11,14 +11,14 @@ Requires Node.js 20 or newer and Git. The repository includes the built server, 
 In Claude Code, run separately:
 
 ```text
-/plugin marketplace add yord-dev/apple-hig-mcp
+/plugin marketplace add yordcode/apple-hig-mcp
 /plugin install hig@hig
 ```
 
 In your terminal for Codex:
 
 ```bash
-codex plugin marketplace add yord-dev/apple-hig-mcp
+codex plugin marketplace add yordcode/apple-hig-mcp
 codex plugin add hig@hig
 ```
 
@@ -52,7 +52,7 @@ The plugin and marketplace are both named `hig`. This is a repository marketplac
 Requirements: Git, Node.js 20 or newer, npm, and an assistant supporting local stdio MCP servers. No API key is required by this server; your assistant may have its own account requirements.
 
 ```bash
-git clone https://github.com/yord-dev/apple-hig-mcp.git
+git clone https://github.com/yordcode/apple-hig-mcp.git
 cd apple-hig-mcp
 npm ci
 npm run build

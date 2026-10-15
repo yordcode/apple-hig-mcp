@@ -3,7 +3,7 @@
   "name": "hig",
   "description": "Community tools to help AI assistants apply Apple's Human Interface Guidelines effectively.",
   "owner": {
-    "name": "Yord (yord-dev)"
+    "name": "Yord (yordcode)"
   },
   "plugins": [
     {
