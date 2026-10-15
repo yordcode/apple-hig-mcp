@@ -34783,17 +34783,17 @@ function loadStore() {
 
 // src/help.ts
 var HELP_COMMANDS = [
-  { command: "/hig/help", use: "Show this help." },
-  { command: "/hig/topic", use: "Read one guideline, such as buttons or sheets, without designing. Optional platform." },
-  { command: "/hig/web", use: "Design a website or web app. Example task: design a card." },
-  { command: "/hig/ios", use: "Design an iPhone interface." },
-  { command: "/hig/ipados", use: "Design an iPad interface." },
-  { command: "/hig/macos", use: "Design a Mac interface." },
-  { command: "/hig/watchos", use: "Design an Apple Watch interface." },
-  { command: "/hig/tvos", use: "Design an Apple TV interface." },
-  { command: "/hig/visionos", use: "Design an Apple Vision Pro interface." },
-  { command: "/hig/convert", use: "Rewrite an existing design so it follows the guidelines. Fill in the description and platform." },
-  { command: "/hig/audit", use: "Check an existing design and list the fixes. Fill in the description and platform." }
+  { command: "/hig-help", use: "Show this help." },
+  { command: "/hig-topic", use: "Read one guideline, such as buttons or sheets, without designing. Optional platform." },
+  { command: "/hig-web", use: "Design a website or web app. Example task: design a card." },
+  { command: "/hig-ios", use: "Design an iPhone interface." },
+  { command: "/hig-ipados", use: "Design an iPad interface." },
+  { command: "/hig-macos", use: "Design a Mac interface." },
+  { command: "/hig-watchos", use: "Design an Apple Watch interface." },
+  { command: "/hig-tvos", use: "Design an Apple TV interface." },
+  { command: "/hig-visionos", use: "Design an Apple Vision Pro interface." },
+  { command: "/hig-convert", use: "Rewrite an existing design so it follows the guidelines. Fill in the description and platform." },
+  { command: "/hig-audit", use: "Check an existing design and list the fixes. Fill in the description and platform." }
 ];
 function helpText() {
   const commands = HELP_COMMANDS.map((entry) => `${entry.command} \u2014 ${entry.use}`).join("\n");
@@ -34801,15 +34801,16 @@ function helpText() {
     "HIG help",
     "",
     "These commands look up Apple's Human Interface Guidelines and community implementation notes inspired by Apple HIG.",
-    "Reload MCP servers in Cursor if a command is missing.",
+    "Reload plugins or MCP servers if a command is missing.",
+    "Names below are short workflow labels. Codex plugin: $hig:hig-web; user skill: $hig-web. Claude Code plugin: /hig:hig-web; user skill: /hig-web. MCP prompt clients may add a server namespace.",
     "",
     "Commands",
     commands,
     "",
     "For a design command, put what you want designed in the task field. The command already sets the platform.",
-    'Example: /hig/web with task "design a card".',
-    "For /hig/topic, name the guideline, such as buttons or sheets. Add a platform to drop other platforms' notes.",
-    "For /hig/convert and /hig/audit, paste the current screens, layout, controls, and copy, and name the platform.",
+    'Example: /hig-web with task "design a card".',
+    "For /hig-topic, name the guideline, such as buttons or sheets. Add a platform to drop other platforms' notes.",
+    "For /hig-convert and /hig-audit, paste the current screens, layout, controls, and copy, and name the platform.",
     "",
     "The agent then calls guide_interface, get_design_reference, and get_topic, and keeps the Apple source URL in the answer.",
     "It can also call search_hig to find a page, and list_topics to browse a section.",
@@ -35623,7 +35624,7 @@ function one(value) {
 function createServer() {
   const server = new McpServer({
     name: "hig",
-    version: "0.1.1"
+    version: "0.2.0"
   });
   server.registerTool(
     "list_topics",
@@ -35807,7 +35808,7 @@ function createServer() {
     async () => textResult(helpText())
   );
   server.registerPrompt(
-    "help",
+    "hig-help",
     {
       title: "HIG help",
       description: "Show how to use the HIG commands. No arguments.",
@@ -35843,7 +35844,7 @@ ${helpText()}`
   ];
   for (const platform of designPlatforms) {
     server.registerPrompt(
-      platform.id,
+      `hig-${platform.id}`,
       {
         title: platform.title,
         description: `Design interface for ${platform.label} using Apple's Human Interface Guidelines. The only argument is the task.`,
@@ -35878,7 +35879,7 @@ ${helpText()}`
     );
   }
   server.registerPrompt(
-    "topic",
+    "hig-topic",
     {
       title: "Look up a HIG topic",
       description: "Read one Human Interface Guidelines topic without designing or auditing.",
@@ -35920,7 +35921,7 @@ ${helpText()}`
     ];
   }
   server.registerPrompt(
-    "convert",
+    "hig-convert",
     {
       title: "Convert a design to HIG",
       description: "Rewrite an existing interface so it follows Apple's Human Interface Guidelines.",
@@ -35951,7 +35952,7 @@ ${helpText()}`
     })
   );
   server.registerPrompt(
-    "audit",
+    "hig-audit",
     {
       title: "Audit against HIG",
       description: "Check an existing interface against Apple's Human Interface Guidelines and list the fixes.",

@@ -24,6 +24,20 @@ codex plugin add hig@hig
 
 Restart or reload your assistant, then continue at **3. Verify** below. Use the manual setup only if your client does not support these plugin commands. Registering both the plugin and a manual MCP entry can duplicate the server.
 
+### Command names and invocation
+
+All workflows are named `hig-help`, `hig-topic`, `hig-web`, `hig-ios`, `hig-ipados`, `hig-macos`, `hig-watchos`, `hig-tvos`, `hig-visionos`, `hig-convert`, and `hig-audit`.
+
+- Codex plugin: type `$hig:hig-web design a settings screen` or `$hig:hig-help`. Codex's plugin skill inventory includes the `hig:` namespace.
+- Claude Code plugin: type `/hig:hig-web design a settings screen` or `/hig:hig-help`. Claude adds the plugin namespace.
+- Cursor and other MCP prompt clients: select the registered `hig-web` or `hig-help` prompt. The client can prepend its own namespace.
+
+For exact `/hig-web` and `/hig-help` commands in Claude Code, clone this repository and copy its `skills/hig-*` folders into `~/.claude/skills/`. Keep each folder's name and its `SKILL.md`. Configure the HIG MCP connection using the manual instructions below, then reload skills. If you already installed the plugin, its MCP server can supply the tools for these user-installed skills; do not add a duplicate MCP entry.
+
+Manual Codex users can copy the same folders into `~/.agents/skills/` and invoke them with `$hig-web` and the other names after restarting or reloading skills.
+
+Version 0.2.0 replaces the old short MCP prompt names (`web`, `help`, and so on) with `hig-web`, `hig-help`, and so on. Update the marketplace plugin and restart your assistant. MCP tool names such as `get_topic` stay the same.
+
 To refresh a Codex installation later:
 
 ```bash

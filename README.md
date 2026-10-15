@@ -6,25 +6,35 @@ A local [Model Context Protocol](https://modelcontextprotocol.io) server for App
 
 ## Commands
 
-These workflows use Apple's Human Interface Guidelines and cite the official sources. For design commands, provide what you want to build in the `task` field; the command already selects the platform.
+These workflows use Apple's Human Interface Guidelines and cite the official sources. All 11 names now use `hig-` instead of `hig/`. Provide the design task as an argument or in your client's `task` field; the command already selects the platform.
 
 | Command | What it does |
 | --- | --- |
-| `/hig/help` | Show the available commands and how to use them. No input required. |
-| `/hig/topic` | Read and summarize one guideline without designing or auditing. Provide a `topic`, such as `buttons`, `sheets`, or `modal`, and an optional `platform`. Omit the platform to retain all platforms' notes. |
-| `/hig/web` | Design a website or web app using Apple HIG as a reference, with semantic HTML, CSS implementation notes, and accessibility guidance. Provide a `task`, such as `design a checkout form`. |
-| `/hig/ios` | Design an iPhone interface using the relevant navigation, layout, and touch-target guidance. Provide a `task`. |
-| `/hig/ipados` | Design an iPad interface with layouts suited to wider screens, sidebars, and split views. Provide a `task`. |
-| `/hig/macos` | Design a Mac interface using desktop window, sidebar, toolbar, and menu patterns. Provide a `task`. |
-| `/hig/watchos` | Design an Apple Watch interface with short interactions and suitable controls and touch targets. Provide a `task`. |
-| `/hig/tvos` | Design an Apple TV interface for remote navigation, focus, and viewing from across the room. Provide a `task`. |
-| `/hig/visionos` | Design an Apple Vision Pro interface using spatial layout, system ornaments, and comfortable target spacing. Provide a `task`. |
-| `/hig/convert` | Adapt an existing interface to follow Apple HIG while preserving its purpose and content. Provide a `description` of the current design and a `platform`. Returns the converted interface and explains what changed. |
-| `/hig/audit` | Check an existing interface against Apple HIG without redesigning it. Provide a `description` and a `platform`. Reports what meets the guidance, what needs fixing, and concrete fixes with Apple source links. |
+| `/hig-help` | Show the available commands and how to use them. No input required. |
+| `/hig-topic` | Read and summarize one guideline without designing or auditing. Provide a `topic`, such as `buttons`, `sheets`, or `modal`, and an optional `platform`. Omit the platform to retain all platforms' notes. |
+| `/hig-web` | Design a website or web app using Apple HIG as a reference, with semantic HTML, CSS implementation notes, and accessibility guidance. Provide a `task`, such as `design a checkout form`. |
+| `/hig-ios` | Design an iPhone interface using the relevant navigation, layout, and touch-target guidance. Provide a `task`. |
+| `/hig-ipados` | Design an iPad interface with layouts suited to wider screens, sidebars, and split views. Provide a `task`. |
+| `/hig-macos` | Design a Mac interface using desktop window, sidebar, toolbar, and menu patterns. Provide a `task`. |
+| `/hig-watchos` | Design an Apple Watch interface with short interactions and suitable controls and touch targets. Provide a `task`. |
+| `/hig-tvos` | Design an Apple TV interface for remote navigation, focus, and viewing from across the room. Provide a `task`. |
+| `/hig-visionos` | Design an Apple Vision Pro interface using spatial layout, system ornaments, and comfortable target spacing. Provide a `task`. |
+| `/hig-convert` | Adapt an existing interface to follow Apple HIG while preserving its purpose and content. Provide a `description` of the current design and a `platform`. Returns the converted interface and explains what changed. |
+| `/hig-audit` | Check an existing interface against Apple HIG without redesigning it. Provide a `description` and a `platform`. Reports what meets the guidance, what needs fixing, and concrete fixes with Apple source links. |
 
-**Command names depend on your assistant.** The `/hig/...` labels above are the Cursor MCP prompt names. Claude Code exposes these prompts using its own namespace. Codex plugin installation supplies the MCP tools; it does not automatically create `/hig/...` slash commands. In Codex, ask for a workflow in plain language, or use the optional [Codex prompt files](.codex/prompts/) described below.
+The table shows short slash-command names. Your assistant controls the invocation prefix:
 
-For example, select `/hig/web` and set `task` to `design an accessible settings screen`. In Codex, ask: **“Use hig to design an accessible settings screen for the web. Fetch the relevant Apple guidelines first and cite them.”**
+| Installation | Example invocation |
+| --- | --- |
+| Claude Code plugin | `/hig:hig-web design an accessible settings screen` |
+| Claude Code user-installed skills | `/hig-web design an accessible settings screen` |
+| Codex plugin skills | `$hig:hig-web design an accessible settings screen` |
+| Codex user-installed skills | `$hig-web design an accessible settings screen` |
+| Cursor or another MCP prompt client | Select the `hig-web` prompt; the client may add its server namespace. |
+
+Use the same pattern for every workflow, such as `/hig:hig-help` in Claude Code or `$hig:hig-help` in Codex. Both plugin clients add `hig:` to the skill name; the plugin cannot remove their namespace. For exact `/hig-web` and `/hig-help` commands, copy the folders under [`skills/`](skills/) into your Claude user skills directory (`~/.claude/skills/`), keeping each folder name. For short `$hig-web` and `$hig-help` names in Codex, use `~/.agents/skills/`. The HIG MCP server must also be configured. See the [setup guide](docs/GETTING_STARTED.md#command-names-and-invocation).
+
+Version 0.2.0 renames the MCP prompts to `hig-help`, `hig-topic`, `hig-web`, and the other names above. Existing MCP tool names are unchanged. Update the plugin and restart or reload your assistant to discover the new names and bundled skills.
 
 ## Tools
 
@@ -103,7 +113,7 @@ Create `.cursor/mcp.json` in your application project, or add the entry to your 
 }
 ```
 
-Cursor slash commands are `/hig/help`, `/hig/topic`, `/hig/web`, `/hig/ios`, `/hig/ipados`, `/hig/macos`, `/hig/watchos`, `/hig/tvos`, `/hig/visionos`, `/hig/convert`, and `/hig/audit`.
+Cursor exposes the `hig-help`, `hig-topic`, `hig-web`, `hig-ios`, `hig-ipados`, `hig-macos`, `hig-watchos`, `hig-tvos`, `hig-visionos`, `hig-convert`, and `hig-audit` MCP prompts. Its UI may add the server namespace to each name.
 
 ### Claude Code
 
@@ -121,7 +131,7 @@ Create `.mcp.json` in your application project. Claude Code reads it when a sess
 }
 ```
 
-Claude Code exposes the same MCP prompts as its own slash commands, namespaced from the server key and prompt name, rather than as `/hig/web`. The tools are callable as `mcp__hig__guide_interface`, `mcp__hig__get_topic`, `mcp__hig__get_design_reference`, `mcp__hig__search_hig`, and `mcp__hig__list_topics`.
+Plugin installation also bundles all 11 workflow skills. Invoke them as `/hig:hig-web`, `/hig:hig-help`, and the other `hig-` names. A manual MCP-only installation exposes the tools and prompts but does not install these skill folders.
 
 ### Claude Desktop
 
@@ -149,7 +159,7 @@ args = ["/absolute/path/to/apple-hig-mcp/dist/index.js"]
 startup_timeout_sec = 30
 ```
 
-Codex lists MCP tools with `/mcp` and does not run MCP prompts. The matching instructions are in [`.codex/prompts/`](.codex/prompts). Codex reads user prompts from `%USERPROFILE%\.codex\prompts`, so copy those files there if `/prompts:hig-web` does not appear. Invoke them as `/prompts:hig-web`, `/prompts:hig-ios`, `/prompts:hig-ipados`, `/prompts:hig-macos`, `/prompts:hig-watchos`, `/prompts:hig-tvos`, `/prompts:hig-visionos`, `/prompts:hig-topic`, `/prompts:hig-convert`, and `/prompts:hig-audit`.
+Codex plugin installation bundles all 11 skills. Invoke `$hig:hig-web`, `$hig:hig-help`, `$hig:hig-audit`, and the other `hig-` names. A manual MCP-only setup supplies tools; copy the folders under `skills/` into `~/.agents/skills/` if you want shorter `$hig-web` names without the plugin namespace. Older custom-prompt files remain available under [`.codex/prompts/`](.codex/prompts/) for clients that still support `/prompts:hig-web`.
 
 ## Refresh the catalog
 

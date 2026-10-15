@@ -4,6 +4,7 @@ import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { expect, it } from "vitest";
+import { HELP_COMMANDS } from "../src/help.js";
 
 it("serves MCP requests from an unrelated directory and rejects unsafe topics", async () => {
   const root = fileURLToPath(new URL("../", import.meta.url));
@@ -38,6 +39,17 @@ it("serves MCP requests from an unrelated directory and rejects unsafe topics", 
             } else if (message.id === 3) {
               expect(message.result.isError).toBe(true);
               expect(message.result.content[0].text).toContain("Invalid HIG topic");
+              send({ jsonrpc: "2.0", id: 4, method: "prompts/list", params: {} });
+            } else if (message.id === 4) {
+              expect(message.result.prompts.map((prompt: { name: string }) => prompt.name).sort()).toEqual(
+                HELP_COMMANDS.map(command => command.command.slice(1)).sort(),
+              );
+              send({ jsonrpc: "2.0", id: 5, method: "prompts/get", params: { name: "hig-web", arguments: { task: "design a settings screen" } } });
+            } else if (message.id === 5) {
+              const text = message.result.messages[0].content.text;
+              expect(text).toContain("design a settings screen");
+              expect(text).toContain("guide_interface");
+              expect(text).toContain('platform "web"');
               finish();
             }
           } catch (error) { finish(error as Error); }

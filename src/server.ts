@@ -36,7 +36,7 @@ function one(value: string | string[] | undefined): string {
 export function createServer(): McpServer {
   const server = new McpServer({
     name: "hig",
-    version: "0.1.1",
+    version: "0.2.0",
   });
 
   server.registerTool(
@@ -244,7 +244,7 @@ export function createServer(): McpServer {
   );
 
   server.registerPrompt(
-    "help",
+    "hig-help",
     {
       title: "HIG help",
       description: "Show how to use the HIG commands. No arguments.",
@@ -280,7 +280,7 @@ export function createServer(): McpServer {
 
   for (const platform of designPlatforms) {
     server.registerPrompt(
-      platform.id,
+      `hig-${platform.id}`,
       {
         title: platform.title,
         description: `Design interface for ${platform.label} using Apple's Human Interface Guidelines. The only argument is the task.`,
@@ -319,7 +319,7 @@ export function createServer(): McpServer {
   }
 
   server.registerPrompt(
-    "topic",
+    "hig-topic",
     {
       title: "Look up a HIG topic",
       description: "Read one Human Interface Guidelines topic without designing or auditing.",
@@ -376,7 +376,7 @@ export function createServer(): McpServer {
   }
 
   server.registerPrompt(
-    "convert",
+    "hig-convert",
     {
       title: "Convert a design to HIG",
       description: "Rewrite an existing interface so it follows Apple's Human Interface Guidelines.",
@@ -408,7 +408,7 @@ export function createServer(): McpServer {
   );
 
   server.registerPrompt(
-    "audit",
+    "hig-audit",
     {
       title: "Audit against HIG",
       description: "Check an existing interface against Apple's Human Interface Guidelines and list the fixes.",

@@ -1,6 +1,6 @@
 {
   "name": "apple-hig-mcp",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "type": "module",
   "description": "Community MCP tools inspired by Apple's HIG, helping developers apply Apple's design guidance effectively.",
   "license": "MIT",
@@ -24,6 +24,7 @@
     "dist",
     "catalog",
     "design-system",
+    "skills",
     "README.md",
     "LICENSE"
   ],

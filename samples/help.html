@@ -81,22 +81,22 @@
     <p>These commands look up Apple's Human Interface Guidelines and original web or native design notes. Reload MCP servers in Cursor if a command is missing.</p>
     <h2>Commands</h2>
     <ul>
-      <li><code>/hig/help</code><span class="use">Show this help.</span></li>
-      <li><code>/hig/topic</code><span class="use">Read one guideline, such as buttons or sheets, without designing. Optional platform.</span></li>
-      <li><code>/hig/web</code><span class="use">Design a website or web app. Example task: design a card.</span></li>
-      <li><code>/hig/ios</code><span class="use">Design an iPhone interface.</span></li>
-      <li><code>/hig/ipados</code><span class="use">Design an iPad interface.</span></li>
-      <li><code>/hig/macos</code><span class="use">Design a Mac interface.</span></li>
-      <li><code>/hig/watchos</code><span class="use">Design an Apple Watch interface.</span></li>
-      <li><code>/hig/tvos</code><span class="use">Design an Apple TV interface.</span></li>
-      <li><code>/hig/visionos</code><span class="use">Design an Apple Vision Pro interface.</span></li>
-      <li><code>/hig/convert</code><span class="use">Rewrite an existing design so it follows the guidelines. Fill in the description and platform.</span></li>
-      <li><code>/hig/audit</code><span class="use">Check an existing design and list the fixes. Fill in the description and platform.</span></li>
+      <li><code>/hig-help</code><span class="use">Show this help.</span></li>
+      <li><code>/hig-topic</code><span class="use">Read one guideline, such as buttons or sheets, without designing. Optional platform.</span></li>
+      <li><code>/hig-web</code><span class="use">Design a website or web app. Example task: design a card.</span></li>
+      <li><code>/hig-ios</code><span class="use">Design an iPhone interface.</span></li>
+      <li><code>/hig-ipados</code><span class="use">Design an iPad interface.</span></li>
+      <li><code>/hig-macos</code><span class="use">Design a Mac interface.</span></li>
+      <li><code>/hig-watchos</code><span class="use">Design an Apple Watch interface.</span></li>
+      <li><code>/hig-tvos</code><span class="use">Design an Apple TV interface.</span></li>
+      <li><code>/hig-visionos</code><span class="use">Design an Apple Vision Pro interface.</span></li>
+      <li><code>/hig-convert</code><span class="use">Rewrite an existing design so it follows the guidelines. Fill in the description and platform.</span></li>
+      <li><code>/hig-audit</code><span class="use">Check an existing design and list the fixes. Fill in the description and platform.</span></li>
     </ul>
     <h2>How to design</h2>
-    <p>Put what you want designed in the task field. The command already sets the platform. Example: <code>/hig/web</code> with task “design a card”.</p>
-    <p>For <code>/hig/topic</code>, name the guideline, such as buttons or sheets. Add a platform to drop other platforms' notes.</p>
-    <p>For <code>/hig/convert</code> and <code>/hig/audit</code>, paste the current screens, layout, controls, and copy, and name the platform.</p>
+    <p>Put what you want designed in the task field. The command already sets the platform. Example: <code>/hig-web</code> with task “design a card”.</p>
+    <p>For <code>/hig-topic</code>, name the guideline, such as buttons or sheets. Add a platform to drop other platforms' notes.</p>
+    <p>For <code>/hig-convert</code> and <code>/hig-audit</code>, paste the current screens, layout, controls, and copy, and name the platform.</p>
     <p>The agent then calls <code>guide_interface</code>, <code>get_design_reference</code>, and <code>get_topic</code>, and keeps the Apple source URL in the answer. It can also call <code>search_hig</code> to find a page, and <code>list_topics</code> to browse a section.</p>
     <p>Button samples: <a href="buttons.html">buttons.html</a></p>
     <p>Apple's Human Interface Guidelines are published by Apple Inc. <a href="https://developer.apple.com/design/human-interface-guidelines">developer.apple.com/design/human-interface-guidelines</a></p>
