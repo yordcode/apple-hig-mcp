@@ -4,7 +4,7 @@ Bring Apple's Human Interface Guidelines into your AI coding workflow.
 
 A local [Model Context Protocol](https://modelcontextprotocol.io) server for Apple's [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines). Cursor, Claude, and Codex can search the full guideline catalog, fetch an article as Markdown, and read community implementation notes inspired by Apple HIG for native apps and the web.
 
-## Install
+## Installation
 
 ### Easy plugin install
 
