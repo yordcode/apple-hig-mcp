@@ -6,13 +6,36 @@ A local [Model Context Protocol](https://modelcontextprotocol.io) server for App
 
 ## Commands
 
-| Commands | What it does |
+These workflows use Apple's Human Interface Guidelines and cite the official sources. For design commands, provide what you want to build in the `task` field; the command already selects the platform.
+
+| Command | What it does |
+| --- | --- |
+| `/hig/help` | Show the available commands and how to use them. No input required. |
+| `/hig/topic` | Read and summarize one guideline without designing or auditing. Provide a `topic`, such as `buttons`, `sheets`, or `modal`, and an optional `platform`. Omit the platform to retain all platforms' notes. |
+| `/hig/web` | Design a website or web app using Apple HIG as a reference, with semantic HTML, CSS implementation notes, and accessibility guidance. Provide a `task`, such as `design a checkout form`. |
+| `/hig/ios` | Design an iPhone interface using the relevant navigation, layout, and touch-target guidance. Provide a `task`. |
+| `/hig/ipados` | Design an iPad interface with layouts suited to wider screens, sidebars, and split views. Provide a `task`. |
+| `/hig/macos` | Design a Mac interface using desktop window, sidebar, toolbar, and menu patterns. Provide a `task`. |
+| `/hig/watchos` | Design an Apple Watch interface with short interactions and suitable controls and touch targets. Provide a `task`. |
+| `/hig/tvos` | Design an Apple TV interface for remote navigation, focus, and viewing from across the room. Provide a `task`. |
+| `/hig/visionos` | Design an Apple Vision Pro interface using spatial layout, system ornaments, and comfortable target spacing. Provide a `task`. |
+| `/hig/convert` | Adapt an existing interface to follow Apple HIG while preserving its purpose and content. Provide a `description` of the current design and a `platform`. Returns the converted interface and explains what changed. |
+| `/hig/audit` | Check an existing interface against Apple HIG without redesigning it. Provide a `description` and a `platform`. Reports what meets the guidance, what needs fixing, and concrete fixes with Apple source links. |
+
+**Command names depend on your assistant.** The `/hig/...` labels above are the Cursor MCP prompt names. Claude Code exposes these prompts using its own namespace. Codex plugin installation supplies the MCP tools; it does not automatically create `/hig/...` slash commands. In Codex, ask for a workflow in plain language, or use the optional [Codex prompt files](.codex/prompts/) described below.
+
+For example, select `/hig/web` and set `task` to `design an accessible settings screen`. In Codex, ask: **“Use hig to design an accessible settings screen for the web. Fetch the relevant Apple guidelines first and cite them.”**
+
+## Tools
+
+| Tool | Purpose |
 | --- | --- |
 | `list_topics` | List topics by section, component group, or platform. |
 | `search_hig` | Search titles and aliases such as `modal`, `nav`, and `form`. |
 | `get_topic` | Fetch one article. Accepts a slug, path, or `developer.apple.com` URL. |
 | `get_design_reference` | Return community implementation notes inspired by Apple's HIG. |
 | `guide_interface` | For a task and platform, return a checklist and the topics to fetch next. |
+| `help` | Show command and workflow guidance. |
 
 `platform` is `web`, `ios`, `ipados`, `macos`, `watchos`, `tvos`, `visionos`, or `all`.
 
@@ -135,21 +158,6 @@ Codex lists MCP tools with `/mcp` and does not run MCP prompts. The matching ins
 Fetched articles are cached for seven days. A failed refresh serves a validated cached copy when one exists. Each Apple request has a ten-second deadline covering the response body. A cache-write failure still returns fresh content.
 
 Simultaneous requests for the same article share one fetch. Parsed caches carry a format version; older formats are refreshed so parser fixes take effect immediately. An older-format cache cannot be used offline until it has been refreshed.
-
-## Prompts
-
-In Cursor, reload MCP servers after pulling this change. Run `/hig/help` to list the commands. Each design command already knows its platform. Put what you want designed in the task field. Claude Code and Codex use the same prompt names through the install paths above.
-
-- `/hig/help` to show help
-- `/hig/web` for a website or web app
-- `/hig/ios` for iPhone
-- `/hig/ipados` for iPad
-- `/hig/macos` for Mac
-- `/hig/watchos` for Apple Watch
-- `/hig/tvos` for Apple TV
-- `/hig/visionos` for Apple Vision Pro
-
-`/hig/topic` reads one guideline, such as buttons or sheets, without designing. `/hig/convert` rewrites an existing design so it follows the guidelines. `/hig/audit` checks that design and lists the fixes. Convert and audit take the current interface and a platform.
 
 ## Tests
 
