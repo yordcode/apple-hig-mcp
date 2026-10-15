@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "hig",
-  "version": "0.1.0",
-  "description": "Look up Apple's Human Interface Guidelines and original web or native design notes.",
+  "version": "0.1.1",
+  "description": "Find and apply Apple's HIG with source links and community implementation notes. Design guidance by Apple.",
   "license": "MIT",
   "keywords": ["hig", "design", "apple", "mcp"]
 }

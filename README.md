@@ -2,9 +2,11 @@
 
 Bring Apple's Human Interface Guidelines into your AI coding workflow.
 
-A local [Model Context Protocol](https://modelcontextprotocol.io) server for Apple's [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines). Cursor, Claude, and Codex can search the full guideline catalog, fetch an article as Markdown, and read original design notes for native apps and the web.
+**Apple created and publishes the [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines).** This project is inspired by Apple's HIG and helps developers and AI assistants find, understand, and apply that guidance effectively. The contribution here is the MCP integration, search, and practical implementation notes; the underlying design guidance belongs to Apple. This is an independent community project, not an Apple product.
 
-Apple's articles stay on Apple's site. This repo commits navigation metadata and original implementation notes. Page text is fetched on demand and cached under `~/.cache/hig/` in your user home directory.
+A local [Model Context Protocol](https://modelcontextprotocol.io) server for Apple's [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines). Cursor, Claude, and Codex can search the full guideline catalog, fetch an article as Markdown, and read community implementation notes inspired by Apple HIG for native apps and the web.
+
+Apple's articles stay on Apple's site. This repo commits navigation metadata and community implementation notes. Page text is fetched on demand and cached under `~/.cache/hig/` in your user home directory.
 
 ## Tools
 
@@ -13,7 +15,7 @@ Apple's articles stay on Apple's site. This repo commits navigation metadata and
 | `list_topics` | List topics by section, component group, or platform. |
 | `search_hig` | Search titles and aliases such as `modal`, `nav`, and `form`. |
 | `get_topic` | Fetch one article. Accepts a slug, path, or `developer.apple.com` URL. |
-| `get_design_reference` | Return an original foundation, component, or pattern card. |
+| `get_design_reference` | Return community implementation notes inspired by Apple's HIG. |
 | `guide_interface` | For a task and platform, return a checklist and the topics to fetch next. |
 
 `platform` is `web`, `ios`, `ipados`, `macos`, `watchos`, `tvos`, `visionos`, or `all`.
@@ -21,6 +23,30 @@ Apple's articles stay on Apple's site. This repo commits navigation metadata and
 Every `get_topic` result includes the canonical Apple URL and states that the guidelines are published by Apple. Web notes translate hierarchy, targets, type roles, and component behavior into HTML and CSS. They do not reproduce Apple product chrome, and they do not bundle San Francisco or SF Symbols artwork.
 
 ## Setup
+
+### Easy plugin install
+
+Requires Node.js 20 or newer and Git on your `PATH`. The plugin includes the built MCP server, so no manual clone, npm install, build, or path editing is needed.
+
+**Claude Code** — run these as separate commands inside Claude Code:
+
+```text
+/plugin marketplace add yord-dev/apple-hig-mcp
+/plugin install hig@hig
+```
+
+**Codex** — run these in your terminal:
+
+```bash
+codex plugin marketplace add yord-dev/apple-hig-mcp
+codex plugin add hig@hig
+```
+
+Reload plugins or restart your assistant, then ask: **“Use hig to design an accessible settings screen for the web. Fetch Apple's relevant guidelines first and cite them.”** The plugin name and marketplace name are both `hig`, so its install ID is `hig@hig`.
+
+Choose either plugin installation or manual MCP setup below to avoid registering the same server twice. Marketplace installation applies to Claude Code and Codex; Cursor and Claude Desktop can use manual MCP configuration.
+
+### Manual setup and development
 
 Start with the **[step-by-step setup and usage guide](docs/GETTING_STARTED.md)** for client configuration, examples, verification, and troubleshooting.
 
@@ -155,4 +181,4 @@ CI checks Node.js 20 and 24 on Windows and Linux. See [CONTRIBUTING.md](CONTRIBU
 
 This independent project is not affiliated with or endorsed by Apple Inc. Apple publishes the Human Interface Guidelines; fetched articles include their official source URLs. Apple article text is fetched on demand and is not bundled in this repository.
 
-Repository code and original implementation notes are provided under the [MIT License](LICENSE). That license does not grant rights to Apple's guideline content, fonts, logos, or SF Symbols artwork.
+Repository code and community implementation notes are provided under the [MIT License](LICENSE). That license does not grant rights to Apple's guideline content, fonts, logos, or SF Symbols artwork.

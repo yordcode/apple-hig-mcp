@@ -2,6 +2,37 @@
 
 Apple HIG MCP gives your coding assistant searchable Apple design guidance and original implementation checklists. It supports web, iOS, iPadOS, macOS, watchOS, tvOS, and visionOS. The included catalog contains 172 topics and 34 design reference cards.
 
+Apple created and publishes the Human Interface Guidelines. This community integration is inspired by Apple's work and helps you apply it effectively; it does not claim authorship of Apple's design system or official affiliation with Apple.
+
+## Easy plugin installation
+
+Requires Node.js 20 or newer and Git. The repository includes the built server, so these commands do not require a manual clone, npm install, or build.
+
+In Claude Code, run separately:
+
+```text
+/plugin marketplace add yord-dev/apple-hig-mcp
+/plugin install hig@hig
+```
+
+In your terminal for Codex:
+
+```bash
+codex plugin marketplace add yord-dev/apple-hig-mcp
+codex plugin add hig@hig
+```
+
+Restart or reload your assistant, then continue at **3. Verify** below. Use the manual setup only if your client does not support these plugin commands. Registering both the plugin and a manual MCP entry can duplicate the server.
+
+To refresh a Codex installation later:
+
+```bash
+codex plugin marketplace upgrade hig
+codex plugin add hig@hig
+```
+
+The plugin and marketplace are both named `hig`. This is a repository marketplace, not a claim of acceptance into an official public plugin directory. See the official [Codex marketplace documentation](https://developers.openai.com/plugins/build/plugins) and [Claude Code marketplace documentation](https://code.claude.com/docs/en/plugin-marketplaces).
+
 ## 1. Install
 
 Requirements: Git, Node.js 20 or newer, npm, and an assistant supporting local stdio MCP servers. No API key is required by this server; your assistant may have its own account requirements.

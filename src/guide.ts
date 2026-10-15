@@ -8,6 +8,7 @@ export interface PresentedCard {
   kind: DesignCard["kind"];
   summary: string;
   sourceUrl: string;
+  attribution: string;
   whenToUse: string[];
   whenNotToUse: string[];
   rules: string[];
@@ -27,6 +28,7 @@ export function presentCard(card: DesignCard, platform: PlatformFilter): Present
     kind: card.kind,
     summary: card.summary,
     sourceUrl: sourceUrlForPath(card.sourcePath),
+    attribution: "Apple created and publishes the Human Interface Guidelines. These are community implementation notes inspired by Apple's HIG, not official Apple guidance or a new design system.",
     whenToUse: card.whenToUse,
     whenNotToUse: card.whenNotToUse,
     rules: card.rules.filter((rule) => ruleMatches(rule.platforms, platform)).map((rule) => rule.statement),

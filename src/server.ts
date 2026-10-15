@@ -36,7 +36,7 @@ function one(value: string | string[] | undefined): string {
 export function createServer(): McpServer {
   const server = new McpServer({
     name: "hig",
-    version: "0.1.0",
+    version: "0.1.1",
   });
 
   server.registerTool(
@@ -120,7 +120,7 @@ export function createServer(): McpServer {
     {
       title: "Get design reference",
       description:
-        "Return an original design-system card for a HIG foundation, component, or pattern. Cards include platform-tagged rules and, for web, HTML and CSS notes. They cite the official page instead of quoting it.",
+        "Return community implementation notes inspired by Apple's HIG. Apple created the underlying design guidance. Notes include platform-tagged rules and web HTML/CSS guidance, with official Apple source links.",
       inputSchema: z.object({
         id: z.string().describe("Card id, such as buttons, color, sheets, or settings."),
         platform: platformSchema.optional(),
@@ -140,7 +140,7 @@ export function createServer(): McpServer {
     {
       title: "Guide an interface",
       description:
-        "Given a UI task and platform, return matching design-system cards, a short checklist, and two or three HIG topics to fetch with get_topic before writing the interface.",
+        "Given a UI task and platform, return community implementation notes inspired by Apple's HIG, a short checklist, and two or three official Apple topics to fetch before writing the interface.",
       inputSchema: z.object({
         task: z.string().describe("What to design, such as settings screen, checkout sheet, or onboarding."),
         platform: platformSchema.optional(),

@@ -17,7 +17,7 @@ export function helpText(): string {
   return [
     "HIG help",
     "",
-    "These commands look up Apple's Human Interface Guidelines and original web or native design notes.",
+    "These commands look up Apple's Human Interface Guidelines and community implementation notes inspired by Apple HIG.",
     "Reload MCP servers in Cursor if a command is missing.",
     "",
     "Commands",

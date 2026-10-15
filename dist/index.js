@@ -34800,7 +34800,7 @@ function helpText() {
   return [
     "HIG help",
     "",
-    "These commands look up Apple's Human Interface Guidelines and original web or native design notes.",
+    "These commands look up Apple's Human Interface Guidelines and community implementation notes inspired by Apple HIG.",
     "Reload MCP servers in Cursor if a command is missing.",
     "",
     "Commands",
@@ -35464,6 +35464,7 @@ function presentCard(card, platform) {
     kind: card.kind,
     summary: card.summary,
     sourceUrl: sourceUrlForPath(card.sourcePath),
+    attribution: "Apple created and publishes the Human Interface Guidelines. These are community implementation notes inspired by Apple's HIG, not official Apple guidance or a new design system.",
     whenToUse: card.whenToUse,
     whenNotToUse: card.whenNotToUse,
     rules: card.rules.filter((rule) => ruleMatches(rule.platforms, platform)).map((rule) => rule.statement),
@@ -35622,7 +35623,7 @@ function one(value) {
 function createServer() {
   const server = new McpServer({
     name: "hig",
-    version: "0.1.0"
+    version: "0.1.1"
   });
   server.registerTool(
     "list_topics",
@@ -35690,7 +35691,7 @@ function createServer() {
     "get_design_reference",
     {
       title: "Get design reference",
-      description: "Return an original design-system card for a HIG foundation, component, or pattern. Cards include platform-tagged rules and, for web, HTML and CSS notes. They cite the official page instead of quoting it.",
+      description: "Return community implementation notes inspired by Apple's HIG. Apple created the underlying design guidance. Notes include platform-tagged rules and web HTML/CSS guidance, with official Apple source links.",
       inputSchema: object({
         id: string2().describe("Card id, such as buttons, color, sheets, or settings."),
         platform: platformSchema.optional()
@@ -35708,7 +35709,7 @@ function createServer() {
     "guide_interface",
     {
       title: "Guide an interface",
-      description: "Given a UI task and platform, return matching design-system cards, a short checklist, and two or three HIG topics to fetch with get_topic before writing the interface.",
+      description: "Given a UI task and platform, return community implementation notes inspired by Apple's HIG, a short checklist, and two or three official Apple topics to fetch before writing the interface.",
       inputSchema: object({
         task: string2().describe("What to design, such as settings screen, checkout sheet, or onboarding."),
         platform: platformSchema.optional()

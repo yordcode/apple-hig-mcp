@@ -1,8 +1,8 @@
 {
   "name": "apple-hig-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
-  "description": "MCP server for Apple Human Interface Guidelines references and original web/native UI guidance.",
+  "description": "Community MCP tools inspired by Apple's HIG, helping developers apply Apple's design guidance effectively.",
   "license": "MIT",
   "author": "Yord (yord-dev)",
   "repository": {
