@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HIG help</title>
+  <style>
+    :root {
+      --color-label: #1d1d1f;
+      --color-label-secondary: #6e6e73;
+      --color-bg: #f5f5f7;
+      --color-bg-elevated: #ffffff;
+      --color-separator: rgba(0, 0, 0, 0.12);
+      --color-accent: #0a66d8;
+      --font: ui-sans-serif, system-ui, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-label: #f5f5f7;
+        --color-label-secondary: #a1a1a6;
+        --color-bg: #1c1c1e;
+        --color-bg-elevated: #2c2c2e;
+        --color-separator: rgba(255, 255, 255, 0.14);
+        --color-accent: #409cff;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--color-label);
+      background: var(--color-bg);
+      line-height: 1.45;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    p { color: var(--color-label-secondary); }
+    a { color: var(--color-accent); }
+    h2 {
+      margin: 28px 0 8px;
+      font-size: 1.125rem;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    li {
+      background: var(--color-bg-elevated);
+      border: 1px solid var(--color-separator);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    code {
+      font-family: ui-monospace, "Cascadia Code", monospace;
+      font-size: 0.875rem;
+    }
+    .use {
+      display: block;
+      margin-top: 4px;
+      color: var(--color-label-secondary);
+      font-size: 0.9375rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>HIG help</h1>
+    <p>These commands look up Apple's Human Interface Guidelines and original web or native design notes. Reload MCP servers in Cursor if a command is missing.</p>
+    <h2>Commands</h2>
+    <ul>
+      <li><code>/hig/help</code><span class="use">Show this help.</span></li>
+      <li><code>/hig/topic</code><span class="use">Read one guideline, such as buttons or sheets, without designing. Optional platform.</span></li>
+      <li><code>/hig/web</code><span class="use">Design a website or web app. Example task: design a card.</span></li>
+      <li><code>/hig/ios</code><span class="use">Design an iPhone interface.</span></li>
+      <li><code>/hig/ipados</code><span class="use">Design an iPad interface.</span></li>
+      <li><code>/hig/macos</code><span class="use">Design a Mac interface.</span></li>
+      <li><code>/hig/watchos</code><span class="use">Design an Apple Watch interface.</span></li>
+      <li><code>/hig/tvos</code><span class="use">Design an Apple TV interface.</span></li>
+      <li><code>/hig/visionos</code><span class="use">Design an Apple Vision Pro interface.</span></li>
+      <li><code>/hig/convert</code><span class="use">Rewrite an existing design so it follows the guidelines. Fill in the description and platform.</span></li>
+      <li><code>/hig/audit</code><span class="use">Check an existing design and list the fixes. Fill in the description and platform.</span></li>
+    </ul>
+    <h2>How to design</h2>
+    <p>Put what you want designed in the task field. The command already sets the platform. Example: <code>/hig/web</code> with task “design a card”.</p>
+    <p>For <code>/hig/topic</code>, name the guideline, such as buttons or sheets. Add a platform to drop other platforms' notes.</p>
+    <p>For <code>/hig/convert</code> and <code>/hig/audit</code>, paste the current screens, layout, controls, and copy, and name the platform.</p>
+    <p>The agent then calls <code>guide_interface</code>, <code>get_design_reference</code>, and <code>get_topic</code>, and keeps the Apple source URL in the answer. It can also call <code>search_hig</code> to find a page, and <code>list_topics</code> to browse a section.</p>
+    <p>Button samples: <a href="buttons.html">buttons.html</a></p>
+    <p>Apple's Human Interface Guidelines are published by Apple Inc. <a href="https://developer.apple.com/design/human-interface-guidelines">developer.apple.com/design/human-interface-guidelines</a></p>
+  </main>
+</body>
+</html>

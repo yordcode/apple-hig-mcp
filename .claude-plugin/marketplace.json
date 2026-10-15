@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "hig",
+  "description": "Apple Human Interface Guidelines reference for design agents.",
+  "owner": {
+    "name": "hig"
+  },
+  "plugins": [
+    {
+      "name": "hig",
+      "description": "Look up Apple's Human Interface Guidelines and original web or native design notes.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

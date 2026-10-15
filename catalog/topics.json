@@ -1,0 +1,1382 @@
+{
+  "source": "https://developer.apple.com/tutorials/data/index/design--human-interface-guidelines",
+  "generatedAt": "2026-10-14T13:31:43.907Z",
+  "topics": [
+    {
+      "id": "accessibility",
+      "title": "Accessibility",
+      "path": "/design/human-interface-guidelines/accessibility",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "action-button",
+      "title": "Action button",
+      "path": "/design/human-interface-guidelines/action-button",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "action-sheets",
+      "title": "Action sheets",
+      "path": "/design/human-interface-guidelines/action-sheets",
+      "section": "components",
+      "group": "presentation",
+      "kind": "article"
+    },
+    {
+      "id": "activity-rings",
+      "title": "Activity rings",
+      "path": "/design/human-interface-guidelines/activity-rings",
+      "section": "components",
+      "group": "status",
+      "kind": "article"
+    },
+    {
+      "id": "activity-views",
+      "title": "Activity views",
+      "path": "/design/human-interface-guidelines/activity-views",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "article"
+    },
+    {
+      "id": "airplay",
+      "title": "AirPlay",
+      "path": "/design/human-interface-guidelines/airplay",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "alerts",
+      "title": "Alerts",
+      "path": "/design/human-interface-guidelines/alerts",
+      "section": "components",
+      "group": "presentation",
+      "kind": "article"
+    },
+    {
+      "id": "always-on",
+      "title": "Always On",
+      "path": "/design/human-interface-guidelines/always-on",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "app-clips",
+      "title": "App Clips",
+      "path": "/design/human-interface-guidelines/app-clips",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "app-icons",
+      "title": "App icons",
+      "path": "/design/human-interface-guidelines/app-icons",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "app-shortcuts",
+      "title": "App Shortcuts",
+      "path": "/design/human-interface-guidelines/app-shortcuts",
+      "section": "components",
+      "group": "system-experiences",
+      "kind": "article"
+    },
+    {
+      "id": "apple-in-app-purchase",
+      "title": "Apple In-App Purchase",
+      "path": "/design/human-interface-guidelines/apple-in-app-purchase",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "apple-pay",
+      "title": "Apple Pay",
+      "path": "/design/human-interface-guidelines/apple-pay",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "apple-pencil-and-scribble",
+      "title": "Apple Pencil and Scribble",
+      "path": "/design/human-interface-guidelines/apple-pencil-and-scribble",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "augmented-reality",
+      "title": "Augmented reality",
+      "path": "/design/human-interface-guidelines/augmented-reality",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "boxes",
+      "title": "Boxes",
+      "path": "/design/human-interface-guidelines/boxes",
+      "section": "components",
+      "group": "layout-and-organization",
+      "kind": "article"
+    },
+    {
+      "id": "branding",
+      "title": "Branding",
+      "path": "/design/human-interface-guidelines/branding",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "buttons",
+      "title": "Buttons",
+      "path": "/design/human-interface-guidelines/buttons",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "article"
+    },
+    {
+      "id": "camera-control",
+      "title": "Camera Control",
+      "path": "/design/human-interface-guidelines/camera-control",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "carekit",
+      "title": "CareKit",
+      "path": "/design/human-interface-guidelines/carekit",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "carplay",
+      "title": "CarPlay",
+      "path": "/design/human-interface-guidelines/carplay",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "charting-data",
+      "title": "Charting data",
+      "path": "/design/human-interface-guidelines/charting-data",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "charts",
+      "title": "Charts",
+      "path": "/design/human-interface-guidelines/charts",
+      "section": "components",
+      "group": "content",
+      "kind": "article"
+    },
+    {
+      "id": "collaboration-and-sharing",
+      "title": "Collaboration and sharing",
+      "path": "/design/human-interface-guidelines/collaboration-and-sharing",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "collections",
+      "title": "Collections",
+      "path": "/design/human-interface-guidelines/collections",
+      "section": "components",
+      "group": "layout-and-organization",
+      "kind": "article"
+    },
+    {
+      "id": "color",
+      "title": "Color",
+      "path": "/design/human-interface-guidelines/color",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "color-wells",
+      "title": "Color wells",
+      "path": "/design/human-interface-guidelines/color-wells",
+      "section": "components",
+      "group": "selection-and-input",
+      "kind": "article"
+    },
+    {
+      "id": "column-views",
+      "title": "Column views",
+      "path": "/design/human-interface-guidelines/column-views",
+      "section": "components",
+      "group": "layout-and-organization",
+      "kind": "article"
+    },
+    {
+      "id": "combo-boxes",
+      "title": "Combo boxes",
+      "path": "/design/human-interface-guidelines/combo-boxes",
+      "section": "components",
+      "group": "selection-and-input",
+      "kind": "article"
+    },
+    {
+      "id": "complications",
+      "title": "Complications",
+      "path": "/design/human-interface-guidelines/complications",
+      "section": "components",
+      "group": "system-experiences",
+      "kind": "article"
+    },
+    {
+      "id": "components",
+      "title": "Components",
+      "path": "/design/human-interface-guidelines/components",
+      "section": "components",
+      "group": null,
+      "kind": "collection"
+    },
+    {
+      "id": "content",
+      "title": "Content",
+      "path": "/design/human-interface-guidelines/content",
+      "section": "components",
+      "group": "content",
+      "kind": "collection"
+    },
+    {
+      "id": "context-menus",
+      "title": "Context menus",
+      "path": "/design/human-interface-guidelines/context-menus",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "article"
+    },
+    {
+      "id": "controls",
+      "title": "Controls",
+      "path": "/design/human-interface-guidelines/controls",
+      "section": "components",
+      "group": "system-experiences",
+      "kind": "article"
+    },
+    {
+      "id": "dark-mode",
+      "title": "Dark Mode",
+      "path": "/design/human-interface-guidelines/dark-mode",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "design-principles",
+      "title": "Design principles",
+      "path": "/design/human-interface-guidelines/design-principles",
+      "section": "getting-started",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "designing-for-games",
+      "title": "Designing for games",
+      "path": "/design/human-interface-guidelines/designing-for-games",
+      "section": "getting-started",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "designing-for-ios",
+      "title": "Designing for iOS",
+      "path": "/design/human-interface-guidelines/designing-for-ios",
+      "section": "getting-started",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "designing-for-ipados",
+      "title": "Designing for iPadOS",
+      "path": "/design/human-interface-guidelines/designing-for-ipados",
+      "section": "getting-started",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "designing-for-iphone-duo",
+      "title": "Designing for iPhone Duo",
+      "path": "/design/human-interface-guidelines/designing-for-iphone-duo",
+      "section": "getting-started",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "designing-for-macos",
+      "title": "Designing for macOS",
+      "path": "/design/human-interface-guidelines/designing-for-macos",
+      "section": "getting-started",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "designing-for-tvos",
+      "title": "Designing for tvOS",
+      "path": "/design/human-interface-guidelines/designing-for-tvos",
+      "section": "getting-started",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "designing-for-visionos",
+      "title": "Designing for visionOS",
+      "path": "/design/human-interface-guidelines/designing-for-visionos",
+      "section": "getting-started",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "designing-for-watchos",
+      "title": "Designing for watchOS",
+      "path": "/design/human-interface-guidelines/designing-for-watchos",
+      "section": "getting-started",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "digit-entry-views",
+      "title": "Digit entry views",
+      "path": "/design/human-interface-guidelines/digit-entry-views",
+      "section": "components",
+      "group": "selection-and-input",
+      "kind": "article"
+    },
+    {
+      "id": "digital-crown",
+      "title": "Digital Crown",
+      "path": "/design/human-interface-guidelines/digital-crown",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "disclosure-controls",
+      "title": "Disclosure controls",
+      "path": "/design/human-interface-guidelines/disclosure-controls",
+      "section": "components",
+      "group": "layout-and-organization",
+      "kind": "article"
+    },
+    {
+      "id": "dock-menus",
+      "title": "Dock menus",
+      "path": "/design/human-interface-guidelines/dock-menus",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "article"
+    },
+    {
+      "id": "drag-and-drop",
+      "title": "Drag and drop",
+      "path": "/design/human-interface-guidelines/drag-and-drop",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "edit-menus",
+      "title": "Edit menus",
+      "path": "/design/human-interface-guidelines/edit-menus",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "article"
+    },
+    {
+      "id": "entering-data",
+      "title": "Entering data",
+      "path": "/design/human-interface-guidelines/entering-data",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "eyes",
+      "title": "Eyes",
+      "path": "/design/human-interface-guidelines/eyes",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "feedback",
+      "title": "Feedback",
+      "path": "/design/human-interface-guidelines/feedback",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "file-management",
+      "title": "File management",
+      "path": "/design/human-interface-guidelines/file-management",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "focus-and-selection",
+      "title": "Focus and selection",
+      "path": "/design/human-interface-guidelines/focus-and-selection",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "foundations",
+      "title": "Foundations",
+      "path": "/design/human-interface-guidelines/foundations",
+      "section": "foundations",
+      "group": null,
+      "kind": "collection"
+    },
+    {
+      "id": "game-center",
+      "title": "Game Center",
+      "path": "/design/human-interface-guidelines/game-center",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "game-controls",
+      "title": "Game controls",
+      "path": "/design/human-interface-guidelines/game-controls",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "gauges",
+      "title": "Gauges",
+      "path": "/design/human-interface-guidelines/gauges",
+      "section": "components",
+      "group": "status",
+      "kind": "article"
+    },
+    {
+      "id": "generative-ai",
+      "title": "Generative AI",
+      "path": "/design/human-interface-guidelines/generative-ai",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "gestures",
+      "title": "Gestures",
+      "path": "/design/human-interface-guidelines/gestures",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "getting-started",
+      "title": "Getting started",
+      "path": "/design/human-interface-guidelines/getting-started",
+      "section": "getting-started",
+      "group": null,
+      "kind": "collection"
+    },
+    {
+      "id": "going-full-screen",
+      "title": "Going full screen",
+      "path": "/design/human-interface-guidelines/going-full-screen",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "gyro-and-accelerometer",
+      "title": "Gyroscope and accelerometer",
+      "path": "/design/human-interface-guidelines/gyro-and-accelerometer",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "healthkit",
+      "title": "HealthKit",
+      "path": "/design/human-interface-guidelines/healthkit",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "home-screen-quick-actions",
+      "title": "Home Screen quick actions",
+      "path": "/design/human-interface-guidelines/home-screen-quick-actions",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "article"
+    },
+    {
+      "id": "homekit",
+      "title": "HomeKit",
+      "path": "/design/human-interface-guidelines/homekit",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "icloud",
+      "title": "iCloud",
+      "path": "/design/human-interface-guidelines/icloud",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "icons",
+      "title": "Icons",
+      "path": "/design/human-interface-guidelines/icons",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "id-verifier",
+      "title": "ID Verifier",
+      "path": "/design/human-interface-guidelines/id-verifier",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "image-views",
+      "title": "Image views",
+      "path": "/design/human-interface-guidelines/image-views",
+      "section": "components",
+      "group": "content",
+      "kind": "article"
+    },
+    {
+      "id": "image-wells",
+      "title": "Image wells",
+      "path": "/design/human-interface-guidelines/image-wells",
+      "section": "components",
+      "group": "selection-and-input",
+      "kind": "article"
+    },
+    {
+      "id": "images",
+      "title": "Images",
+      "path": "/design/human-interface-guidelines/images",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "imessage-apps-and-stickers",
+      "title": "iMessage apps and stickers",
+      "path": "/design/human-interface-guidelines/imessage-apps-and-stickers",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "immersive-experiences",
+      "title": "Immersive experiences",
+      "path": "/design/human-interface-guidelines/immersive-experiences",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "inclusion",
+      "title": "Inclusion",
+      "path": "/design/human-interface-guidelines/inclusion",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "inputs",
+      "title": "Inputs",
+      "path": "/design/human-interface-guidelines/inputs",
+      "section": "inputs",
+      "group": null,
+      "kind": "collection"
+    },
+    {
+      "id": "keyboards",
+      "title": "Keyboards",
+      "path": "/design/human-interface-guidelines/keyboards",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "labels",
+      "title": "Labels",
+      "path": "/design/human-interface-guidelines/labels",
+      "section": "components",
+      "group": "layout-and-organization",
+      "kind": "article"
+    },
+    {
+      "id": "launching",
+      "title": "Launching",
+      "path": "/design/human-interface-guidelines/launching",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "layout",
+      "title": "Layout",
+      "path": "/design/human-interface-guidelines/layout",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "layout-and-organization",
+      "title": "Layout and organization",
+      "path": "/design/human-interface-guidelines/layout-and-organization",
+      "section": "components",
+      "group": "layout-and-organization",
+      "kind": "collection"
+    },
+    {
+      "id": "lists-and-tables",
+      "title": "Lists and tables",
+      "path": "/design/human-interface-guidelines/lists-and-tables",
+      "section": "components",
+      "group": "layout-and-organization",
+      "kind": "article"
+    },
+    {
+      "id": "live-activities",
+      "title": "Live Activities",
+      "path": "/design/human-interface-guidelines/live-activities",
+      "section": "components",
+      "group": "system-experiences",
+      "kind": "article"
+    },
+    {
+      "id": "live-photos",
+      "title": "Live Photos",
+      "path": "/design/human-interface-guidelines/live-photos",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "live-viewing-apps",
+      "title": "Live-viewing apps",
+      "path": "/design/human-interface-guidelines/live-viewing-apps",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "loading",
+      "title": "Loading",
+      "path": "/design/human-interface-guidelines/loading",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "lockups",
+      "title": "Lockups",
+      "path": "/design/human-interface-guidelines/lockups",
+      "section": "components",
+      "group": "layout-and-organization",
+      "kind": "article"
+    },
+    {
+      "id": "mac-catalyst",
+      "title": "Mac Catalyst",
+      "path": "/design/human-interface-guidelines/mac-catalyst",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "machine-learning",
+      "title": "Machine learning",
+      "path": "/design/human-interface-guidelines/machine-learning",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "managing-accounts",
+      "title": "Managing accounts",
+      "path": "/design/human-interface-guidelines/managing-accounts",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "managing-notifications",
+      "title": "Managing notifications",
+      "path": "/design/human-interface-guidelines/managing-notifications",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "maps",
+      "title": "Maps",
+      "path": "/design/human-interface-guidelines/maps",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "materials",
+      "title": "Materials",
+      "path": "/design/human-interface-guidelines/materials",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "menus",
+      "title": "Menus",
+      "path": "/design/human-interface-guidelines/menus",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "article"
+    },
+    {
+      "id": "menus-and-actions",
+      "title": "Menus and actions",
+      "path": "/design/human-interface-guidelines/menus-and-actions",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "collection"
+    },
+    {
+      "id": "modality",
+      "title": "Modality",
+      "path": "/design/human-interface-guidelines/modality",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "motion",
+      "title": "Motion",
+      "path": "/design/human-interface-guidelines/motion",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "multitasking",
+      "title": "Multitasking",
+      "path": "/design/human-interface-guidelines/multitasking",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "navigation-and-search",
+      "title": "Navigation and search",
+      "path": "/design/human-interface-guidelines/navigation-and-search",
+      "section": "components",
+      "group": "navigation-and-search",
+      "kind": "collection"
+    },
+    {
+      "id": "nearby-interactions",
+      "title": "Nearby interactions",
+      "path": "/design/human-interface-guidelines/nearby-interactions",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "nfc",
+      "title": "NFC",
+      "path": "/design/human-interface-guidelines/nfc",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "notifications",
+      "title": "Notifications",
+      "path": "/design/human-interface-guidelines/notifications",
+      "section": "components",
+      "group": "system-experiences",
+      "kind": "article"
+    },
+    {
+      "id": "offering-help",
+      "title": "Offering help",
+      "path": "/design/human-interface-guidelines/offering-help",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "onboarding",
+      "title": "Onboarding",
+      "path": "/design/human-interface-guidelines/onboarding",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "ornaments",
+      "title": "Ornaments",
+      "path": "/design/human-interface-guidelines/ornaments",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "article"
+    },
+    {
+      "id": "outline-views",
+      "title": "Outline views",
+      "path": "/design/human-interface-guidelines/outline-views",
+      "section": "components",
+      "group": "layout-and-organization",
+      "kind": "article"
+    },
+    {
+      "id": "page-controls",
+      "title": "Page controls",
+      "path": "/design/human-interface-guidelines/page-controls",
+      "section": "components",
+      "group": "presentation",
+      "kind": "article"
+    },
+    {
+      "id": "panels",
+      "title": "Panels",
+      "path": "/design/human-interface-guidelines/panels",
+      "section": "components",
+      "group": "presentation",
+      "kind": "article"
+    },
+    {
+      "id": "path-controls",
+      "title": "Path controls",
+      "path": "/design/human-interface-guidelines/path-controls",
+      "section": "components",
+      "group": "navigation-and-search",
+      "kind": "article"
+    },
+    {
+      "id": "patterns",
+      "title": "Patterns",
+      "path": "/design/human-interface-guidelines/patterns",
+      "section": "patterns",
+      "group": null,
+      "kind": "collection"
+    },
+    {
+      "id": "photo-editing",
+      "title": "Photo editing",
+      "path": "/design/human-interface-guidelines/photo-editing",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "pickers",
+      "title": "Pickers",
+      "path": "/design/human-interface-guidelines/pickers",
+      "section": "components",
+      "group": "selection-and-input",
+      "kind": "article"
+    },
+    {
+      "id": "playing-audio",
+      "title": "Playing audio",
+      "path": "/design/human-interface-guidelines/playing-audio",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "playing-haptics",
+      "title": "Playing haptics",
+      "path": "/design/human-interface-guidelines/playing-haptics",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "playing-video",
+      "title": "Playing video",
+      "path": "/design/human-interface-guidelines/playing-video",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "pointing-devices",
+      "title": "Pointing devices",
+      "path": "/design/human-interface-guidelines/pointing-devices",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "pop-up-buttons",
+      "title": "Pop-up buttons",
+      "path": "/design/human-interface-guidelines/pop-up-buttons",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "article"
+    },
+    {
+      "id": "popovers",
+      "title": "Popovers",
+      "path": "/design/human-interface-guidelines/popovers",
+      "section": "components",
+      "group": "presentation",
+      "kind": "article"
+    },
+    {
+      "id": "presentation",
+      "title": "Presentation",
+      "path": "/design/human-interface-guidelines/presentation",
+      "section": "components",
+      "group": "presentation",
+      "kind": "collection"
+    },
+    {
+      "id": "printing",
+      "title": "Printing",
+      "path": "/design/human-interface-guidelines/printing",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "privacy",
+      "title": "Privacy",
+      "path": "/design/human-interface-guidelines/privacy",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "progress-indicators",
+      "title": "Progress indicators",
+      "path": "/design/human-interface-guidelines/progress-indicators",
+      "section": "components",
+      "group": "status",
+      "kind": "article"
+    },
+    {
+      "id": "pull-down-buttons",
+      "title": "Pull-down buttons",
+      "path": "/design/human-interface-guidelines/pull-down-buttons",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "article"
+    },
+    {
+      "id": "rating-indicators",
+      "title": "Rating indicators",
+      "path": "/design/human-interface-guidelines/rating-indicators",
+      "section": "components",
+      "group": "status",
+      "kind": "article"
+    },
+    {
+      "id": "ratings-and-reviews",
+      "title": "Ratings and reviews",
+      "path": "/design/human-interface-guidelines/ratings-and-reviews",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "remotes",
+      "title": "Remotes",
+      "path": "/design/human-interface-guidelines/remotes",
+      "section": "inputs",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "researchkit",
+      "title": "ResearchKit",
+      "path": "/design/human-interface-guidelines/researchkit",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "right-to-left",
+      "title": "Right to left",
+      "path": "/design/human-interface-guidelines/right-to-left",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "scroll-views",
+      "title": "Scroll views",
+      "path": "/design/human-interface-guidelines/scroll-views",
+      "section": "components",
+      "group": "presentation",
+      "kind": "article"
+    },
+    {
+      "id": "search-fields",
+      "title": "Search fields",
+      "path": "/design/human-interface-guidelines/search-fields",
+      "section": "components",
+      "group": "navigation-and-search",
+      "kind": "article"
+    },
+    {
+      "id": "searching",
+      "title": "Searching",
+      "path": "/design/human-interface-guidelines/searching",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "segmented-controls",
+      "title": "Segmented controls",
+      "path": "/design/human-interface-guidelines/segmented-controls",
+      "section": "components",
+      "group": "selection-and-input",
+      "kind": "article"
+    },
+    {
+      "id": "selection-and-input",
+      "title": "Selection and input",
+      "path": "/design/human-interface-guidelines/selection-and-input",
+      "section": "components",
+      "group": "selection-and-input",
+      "kind": "collection"
+    },
+    {
+      "id": "settings",
+      "title": "Settings",
+      "path": "/design/human-interface-guidelines/settings",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "sf-symbols",
+      "title": "SF Symbols",
+      "path": "/design/human-interface-guidelines/sf-symbols",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "shareplay",
+      "title": "SharePlay",
+      "path": "/design/human-interface-guidelines/shareplay",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "shazamkit",
+      "title": "ShazamKit",
+      "path": "/design/human-interface-guidelines/shazamkit",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "sheets",
+      "title": "Sheets",
+      "path": "/design/human-interface-guidelines/sheets",
+      "section": "components",
+      "group": "presentation",
+      "kind": "article"
+    },
+    {
+      "id": "sidebars",
+      "title": "Sidebars",
+      "path": "/design/human-interface-guidelines/sidebars",
+      "section": "components",
+      "group": "navigation-and-search",
+      "kind": "article"
+    },
+    {
+      "id": "sign-in-with-apple",
+      "title": "Sign in with Apple",
+      "path": "/design/human-interface-guidelines/sign-in-with-apple",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "siri",
+      "title": "Siri",
+      "path": "/design/human-interface-guidelines/siri",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "sliders",
+      "title": "Sliders",
+      "path": "/design/human-interface-guidelines/sliders",
+      "section": "components",
+      "group": "selection-and-input",
+      "kind": "article"
+    },
+    {
+      "id": "snippets",
+      "title": "Snippets",
+      "path": "/design/human-interface-guidelines/snippets",
+      "section": "components",
+      "group": "system-experiences",
+      "kind": "article"
+    },
+    {
+      "id": "spatial-layout",
+      "title": "Spatial layout",
+      "path": "/design/human-interface-guidelines/spatial-layout",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "split-views",
+      "title": "Split views",
+      "path": "/design/human-interface-guidelines/split-views",
+      "section": "components",
+      "group": "layout-and-organization",
+      "kind": "article"
+    },
+    {
+      "id": "status",
+      "title": "Status",
+      "path": "/design/human-interface-guidelines/status",
+      "section": "components",
+      "group": "status",
+      "kind": "collection"
+    },
+    {
+      "id": "status-bars",
+      "title": "Status bars",
+      "path": "/design/human-interface-guidelines/status-bars",
+      "section": "components",
+      "group": "system-experiences",
+      "kind": "article"
+    },
+    {
+      "id": "steppers",
+      "title": "Steppers",
+      "path": "/design/human-interface-guidelines/steppers",
+      "section": "components",
+      "group": "selection-and-input",
+      "kind": "article"
+    },
+    {
+      "id": "system-experiences",
+      "title": "System experiences",
+      "path": "/design/human-interface-guidelines/system-experiences",
+      "section": "components",
+      "group": "system-experiences",
+      "kind": "collection"
+    },
+    {
+      "id": "tab-bars",
+      "title": "Tab bars",
+      "path": "/design/human-interface-guidelines/tab-bars",
+      "section": "components",
+      "group": "navigation-and-search",
+      "kind": "article"
+    },
+    {
+      "id": "tab-views",
+      "title": "Tab views",
+      "path": "/design/human-interface-guidelines/tab-views",
+      "section": "components",
+      "group": "layout-and-organization",
+      "kind": "article"
+    },
+    {
+      "id": "tap-to-pay-on-iphone",
+      "title": "Tap to Pay on iPhone",
+      "path": "/design/human-interface-guidelines/tap-to-pay-on-iphone",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "technologies",
+      "title": "Technologies",
+      "path": "/design/human-interface-guidelines/technologies",
+      "section": "technologies",
+      "group": null,
+      "kind": "collection"
+    },
+    {
+      "id": "text-fields",
+      "title": "Text fields",
+      "path": "/design/human-interface-guidelines/text-fields",
+      "section": "components",
+      "group": "selection-and-input",
+      "kind": "article"
+    },
+    {
+      "id": "text-views",
+      "title": "Text views",
+      "path": "/design/human-interface-guidelines/text-views",
+      "section": "components",
+      "group": "content",
+      "kind": "article"
+    },
+    {
+      "id": "the-menu-bar",
+      "title": "The menu bar",
+      "path": "/design/human-interface-guidelines/the-menu-bar",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "article"
+    },
+    {
+      "id": "toggles",
+      "title": "Toggles",
+      "path": "/design/human-interface-guidelines/toggles",
+      "section": "components",
+      "group": "selection-and-input",
+      "kind": "article"
+    },
+    {
+      "id": "token-fields",
+      "title": "Token fields",
+      "path": "/design/human-interface-guidelines/token-fields",
+      "section": "components",
+      "group": "navigation-and-search",
+      "kind": "article"
+    },
+    {
+      "id": "toolbars",
+      "title": "Toolbars",
+      "path": "/design/human-interface-guidelines/toolbars",
+      "section": "components",
+      "group": "menus-and-actions",
+      "kind": "article"
+    },
+    {
+      "id": "top-shelf",
+      "title": "Top Shelf",
+      "path": "/design/human-interface-guidelines/top-shelf",
+      "section": "components",
+      "group": "system-experiences",
+      "kind": "article"
+    },
+    {
+      "id": "typography",
+      "title": "Typography",
+      "path": "/design/human-interface-guidelines/typography",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "undo-and-redo",
+      "title": "Undo and redo",
+      "path": "/design/human-interface-guidelines/undo-and-redo",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "virtual-keyboards",
+      "title": "Virtual keyboards",
+      "path": "/design/human-interface-guidelines/virtual-keyboards",
+      "section": "components",
+      "group": "selection-and-input",
+      "kind": "article"
+    },
+    {
+      "id": "voiceover",
+      "title": "VoiceOver",
+      "path": "/design/human-interface-guidelines/voiceover",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "wallet",
+      "title": "Wallet",
+      "path": "/design/human-interface-guidelines/wallet",
+      "section": "technologies",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "watch-faces",
+      "title": "Watch faces",
+      "path": "/design/human-interface-guidelines/watch-faces",
+      "section": "components",
+      "group": "system-experiences",
+      "kind": "article"
+    },
+    {
+      "id": "web-views",
+      "title": "Web views",
+      "path": "/design/human-interface-guidelines/web-views",
+      "section": "components",
+      "group": "content",
+      "kind": "article"
+    },
+    {
+      "id": "widgets",
+      "title": "Widgets",
+      "path": "/design/human-interface-guidelines/widgets",
+      "section": "components",
+      "group": "system-experiences",
+      "kind": "article"
+    },
+    {
+      "id": "windows",
+      "title": "Windows",
+      "path": "/design/human-interface-guidelines/windows",
+      "section": "components",
+      "group": "presentation",
+      "kind": "article"
+    },
+    {
+      "id": "workouts",
+      "title": "Workouts",
+      "path": "/design/human-interface-guidelines/workouts",
+      "section": "patterns",
+      "group": null,
+      "kind": "article"
+    },
+    {
+      "id": "writing",
+      "title": "Writing",
+      "path": "/design/human-interface-guidelines/writing",
+      "section": "foundations",
+      "group": null,
+      "kind": "article"
+    }
+  ]
+}

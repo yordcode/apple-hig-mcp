@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HIG button samples</title>
+  <style>
+    :root {
+      --color-label: #1d1d1f;
+      --color-label-secondary: #6e6e73;
+      --color-bg: #f5f5f7;
+      --color-bg-elevated: #ffffff;
+      --color-separator: rgba(0, 0, 0, 0.12);
+      --color-accent: #0a66d8;
+      --color-accent-press: #084fa8;
+      --color-on-accent: #ffffff;
+      --font: ui-sans-serif, system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-label: #f5f5f7;
+        --color-label-secondary: #a1a1a6;
+        --color-bg: #1c1c1e;
+        --color-bg-elevated: #2c2c2e;
+        --color-separator: rgba(255, 255, 255, 0.14);
+        --color-accent: #409cff;
+        --color-accent-press: #1a7fe0;
+        --color-on-accent: #041525;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--color-label);
+      background: var(--color-bg);
+      line-height: 1.45;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      max-width: 62ch;
+      color: var(--color-label-secondary);
+    }
+
+    a { color: var(--color-accent); }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    article {
+      background: var(--color-bg-elevated);
+      border: 1px solid var(--color-separator);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    code {
+      font-family: ui-monospace, "Cascadia Code", monospace;
+      font-size: 0.75rem;
+      color: var(--color-label-secondary);
+    }
+
+    .stage {
+      min-height: 168px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .note, .status {
+      margin: 0;
+      font-size: 0.8125rem;
+      color: var(--color-label-secondary);
+    }
+
+    .status { min-height: 1.2em; }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: 0;
+      min-height: 44px;
+      padding-inline: 16px;
+    }
+
+    button:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    .stage-web { background: var(--color-bg); }
+    .stage-ios,
+    .stage-ipad { background: #f2f2f7; }
+    .stage-mac {
+      background: #ececec;
+      box-shadow: inset 0 1px 0 #fff;
+    }
+    .stage-watch { background: #000; }
+
+    @media (prefers-color-scheme: dark) {
+      .stage-ios,
+      .stage-ipad { background: #000; }
+      .stage-mac {
+        background: #323232;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      }
+    }
+
+    .btn-web {
+      border-radius: 8px;
+      background: var(--color-accent);
+      color: var(--color-on-accent);
+      font-weight: 600;
+    }
+    .btn-web:active, .btn-web[aria-pressed="true"] { background: var(--color-accent-press); }
+
+    .stage-ios {
+      width: 100%;
+      justify-content: stretch;
+    }
+    .btn-ios {
+      width: 100%;
+      border-radius: 14px;
+      background: var(--color-accent);
+      color: var(--color-on-accent);
+      font-weight: 600;
+      font-size: 1.0625rem;
+    }
+    .btn-ios:active, .btn-ios[aria-pressed="true"] { background: var(--color-accent-press); }
+
+    .stage-ipad {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    .btn-ipad {
+      border-radius: 12px;
+      background: var(--color-accent);
+      color: var(--color-on-accent);
+      font-weight: 600;
+      padding-inline: 22px;
+    }
+    .btn-ipad:active, .btn-ipad[aria-pressed="true"] { background: var(--color-accent-press); }
+
+    .stage-mac {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    .btn-mac {
+      min-height: 44px;
+      padding-block: 4px;
+      border-radius: 6px;
+      background: var(--color-accent);
+      color: var(--color-on-accent);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
+    }
+    .btn-mac:active, .btn-mac[aria-pressed="true"] {
+      background: var(--color-accent-press);
+      box-shadow: none;
+    }
+
+    .stage-watch {
+      width: 176px;
+      min-height: 200px;
+      margin-inline: auto;
+      border-radius: 36px;
+      align-items: flex-end;
+      padding: 16px;
+    }
+    .btn-watch {
+      width: 100%;
+      border-radius: 999px;
+      background: var(--color-accent);
+      color: var(--color-on-accent);
+      font-weight: 600;
+    }
+    .btn-watch:active, .btn-watch[aria-pressed="true"] { background: var(--color-accent-press); }
+
+    .stage-tv {
+      background: radial-gradient(circle at center, #243044, #0c1016 70%);
+      min-height: 180px;
+    }
+    .btn-tv {
+      min-height: 52px;
+      min-width: 140px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 600;
+      box-shadow: 0 0 0 3px #fff, 0 0 24px rgba(255,255,255,0.35);
+    }
+    .btn-tv:active, .btn-tv[aria-pressed="true"] {
+      background: #fff;
+      color: #0c1016;
+    }
+
+    .stage-vision {
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.55), transparent 40%),
+        linear-gradient(160deg, #c9d4e4, #8ea0b8);
+      min-height: 180px;
+    }
+    @media (prefers-color-scheme: dark) {
+      .stage-vision {
+        background:
+          radial-gradient(circle at 30% 20%, rgba(255,255,255,0.16), transparent 42%),
+          linear-gradient(160deg, #2a3344, #141820);
+      }
+    }
+    .btn-vision {
+      min-height: 52px;
+      padding-inline: 22px;
+      border-radius: 999px;
+      color: var(--color-label);
+      background: color-mix(in srgb, var(--color-bg-elevated) 72%, transparent);
+      backdrop-filter: blur(20px);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.45);
+      font-weight: 600;
+    }
+    .btn-vision:active, .btn-vision[aria-pressed="true"] {
+      background: color-mix(in srgb, var(--color-bg-elevated) 88%, transparent);
+    }
+    @media (prefers-reduced-transparency: reduce) {
+      .btn-vision { background: var(--color-bg-elevated); backdrop-filter: none; }
+    }
+
+    .stage-glass {
+      background:
+        radial-gradient(circle at 20% 30%, #f6c453, transparent 42%),
+        radial-gradient(circle at 80% 20%, #7aa2ff, transparent 40%),
+        radial-gradient(circle at 60% 80%, #ef7d9a, transparent 46%),
+        linear-gradient(160deg, #1b2433, #0e141c);
+    }
+    .btn-glass {
+      min-height: 44px;
+      padding-inline: 18px;
+      border-radius: 999px;
+      color: #1d1d1f;
+      background: color-mix(in srgb, #ffffff 72%, transparent);
+      backdrop-filter: blur(20px);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+      font-weight: 600;
+    }
+    .btn-glass:active,
+    .btn-glass[aria-pressed="true"] {
+      background: color-mix(in srgb, #ffffff 88%, transparent);
+    }
+    @media (prefers-reduced-transparency: reduce) {
+      .btn-glass {
+        background: var(--color-bg-elevated);
+        color: var(--color-label);
+        backdrop-filter: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HIG button samples</h1>
+    <p>One primary button for each design command, plus a Liquid Glass action for the web. Every control is a real button, at least 44 pixels tall, with a verb label and a pressed state. <a href="help.html">Help</a></p>
+  </header>
+  <main>
+    <article>
+      <div class="meta"><h2>Web</h2><code>/hig/web</code></div>
+      <div class="stage stage-web">
+        <button class="btn-web" type="button">Add to Cart</button>
+      </div>
+      <p class="note">Rounded rectangle, accent fill, system font. One prominent action.</p>
+      <p class="status" role="status"></p>
+    </article>
+
+    <article>
+      <div class="meta"><h2>iOS</h2><code>/hig/ios</code></div>
+      <div class="stage stage-ios">
+        <button class="btn-ios" type="button">Continue</button>
+      </div>
+      <p class="note">Full-width prominent button with inset margins on a narrow screen.</p>
+      <p class="status" role="status"></p>
+    </article>
+
+    <article>
+      <div class="meta"><h2>iPadOS</h2><code>/hig/ipados</code></div>
+      <div class="stage stage-ipad">
+        <button class="btn-ipad" type="button">Save</button>
+      </div>
+      <p class="note">Same prominence, sized to its label and placed at the trailing edge.</p>
+      <p class="status" role="status"></p>
+    </article>
+
+    <article>
+      <div class="meta"><h2>macOS</h2><code>/hig/macos</code></div>
+      <div class="stage stage-mac">
+        <button class="btn-mac" type="button">Save</button>
+      </div>
+      <p class="note">Desktop push button. The hit region stays at least 44 pixels tall.</p>
+      <p class="status" role="status"></p>
+    </article>
+
+    <article>
+      <div class="meta"><h2>watchOS</h2><code>/hig/watchos</code></div>
+      <div class="stage stage-watch">
+        <button class="btn-watch" type="button">Start</button>
+      </div>
+      <p class="note">Capsule that spans the width of the watch screen.</p>
+      <p class="status" role="status"></p>
+    </article>
+
+    <article>
+      <div class="meta"><h2>tvOS</h2><code>/hig/tvos</code></div>
+      <div class="stage stage-tv">
+        <button class="btn-tv" type="button">Play</button>
+      </div>
+      <p class="note">Large label with a focus ring that reads from across the room.</p>
+      <p class="status" role="status"></p>
+    </article>
+
+    <article>
+      <div class="meta"><h2>Liquid Glass</h2><code>/hig/web</code></div>
+      <div class="stage stage-glass">
+        <button class="btn-glass" type="button">Share</button>
+      </div>
+      <p class="note">One glass control over rich content. Blur stays on this button only, and a solid fill replaces it when reduced transparency is on.</p>
+      <p class="status" role="status"></p>
+    </article>
+
+    <article>
+      <div class="meta"><h2>visionOS</h2><code>/hig/visionos</code></div>
+      <div class="stage stage-vision">
+        <button class="btn-vision" type="button">Open</button>
+      </div>
+      <p class="note">Capsule with a visible fill. A solid background replaces the blur when reduced transparency is on.</p>
+      <p class="status" role="status"></p>
+    </article>
+  </main>
+  <script>
+    for (const button of document.querySelectorAll("button")) {
+      button.addEventListener("click", () => {
+        const card = button.closest("article");
+        const status = card.querySelector(".status");
+        const pressed = button.getAttribute("aria-pressed") === "true";
+        button.setAttribute("aria-pressed", pressed ? "false" : "true");
+        status.textContent = pressed ? "" : button.textContent + " pressed";
+      });
+    }
+  </script>
+</body>
+</html>

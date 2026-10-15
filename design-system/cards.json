@@ -1,0 +1,1018 @@
+[
+  {
+    "id": "color",
+    "title": "Color",
+    "kind": "foundation",
+    "sourcePath": "/design/human-interface-guidelines/color",
+    "summary": "Use color to show hierarchy, status, and brand, and keep text readable in both light and dark appearances.",
+    "keywords": ["color", "colour", "accent", "contrast", "semantic"],
+    "whenToUse": ["To distinguish a primary action, a selected state, or a status.", "To carry a restrained brand accent through the interface."],
+    "whenNotToUse": ["As the only signal for an error, success, or required field.", "To decorate large surfaces that compete with content."],
+    "rules": [
+      {"statement": "Name colors by role, such as label, secondary label, background, separator, accent, and danger, instead of by a raw value.", "platforms": ["all"]},
+      {"statement": "Keep a single accent for primary actions and selection so people can spot the next step.", "platforms": ["all"]},
+      {"statement": "Do not style a destructive action with the accent color.", "platforms": ["all"]},
+      {"statement": "Pair color with text or a symbol whenever the color carries meaning.", "platforms": ["all"]},
+      {"statement": "On the web, define those roles as custom properties and override the same names under prefers-color-scheme: dark.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": ":root",
+      "variants": ["light", "dark"],
+      "cssNotes": [
+        "Define --color-label, --color-label-secondary, --color-bg, --color-bg-elevated, --color-separator, --color-accent, and --color-danger.",
+        "Body copy uses --color-label on --color-bg. Metadata uses --color-label-secondary.",
+        "Do not hard-code Apple system-color hex values; they change with appearance and vibrancy."
+      ],
+      "accessibility": [
+        "Body text should clear WCAG AA contrast, 4.5:1, and large text or interface components 3:1.",
+        "Focus indicators must stay visible on both appearances."
+      ]
+    },
+    "related": ["dark-mode", "accessibility", "branding"]
+  },
+  {
+    "id": "typography",
+    "title": "Typography",
+    "kind": "foundation",
+    "sourcePath": "/design/human-interface-guidelines/typography",
+    "summary": "A short type scale creates hierarchy. Let people enlarge the text.",
+    "keywords": ["typography", "font", "type", "title", "body", "caption"],
+    "whenToUse": ["To separate a title, the body, and supporting metadata.", "To keep reading comfortable on a phone or a wide column."],
+    "whenNotToUse": ["To invent a new size for every screen.", "To shrink text so more content fits."],
+    "rules": [
+      {"statement": "Use a small set of roles: large title, title, headline, body, callout, subhead, footnote, and caption.", "platforms": ["all"]},
+      {"statement": "Body is the default. Larger roles are titles. Smaller roles are metadata.", "platforms": ["all"]},
+      {"statement": "Respect the reader's text-size setting instead of locking a pixel size.", "platforms": ["all"]},
+      {"statement": "On the web, use the system UI font stack and rem units so browser zoom and user font settings work.", "platforms": ["web"]},
+      {"statement": "Keep a long-reading line around 60 to 80 characters.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "body",
+      "variants": ["large-title", "title", "headline", "body", "callout", "subhead", "footnote", "caption"],
+      "cssNotes": [
+        "font-family: ui-sans-serif, system-ui, sans-serif. Do not bundle or redistribute San Francisco.",
+        "A practical web scale: large title 2rem/700, title 1.5rem/700, headline 1.125rem/600, body 1rem/400, subhead 0.9375rem, footnote 0.8125rem, caption 0.75rem.",
+        "Body line-height around 1.45. This scale names HIG text roles; it is not Apple's point table."
+      ],
+      "accessibility": [
+        "Do not disable zoom or set a maximum scale.",
+        "Use rem or the browser default so people can enlarge text."
+      ]
+    },
+    "related": ["writing", "layout", "accessibility"]
+  },
+  {
+    "id": "layout",
+    "title": "Layout",
+    "kind": "foundation",
+    "sourcePath": "/design/human-interface-guidelines/layout",
+    "summary": "Align content to a consistent spacing rhythm and keep controls easy to hit as the window changes size.",
+    "keywords": ["layout", "spacing", "margin", "safe-area", "grid", "responsive"],
+    "whenToUse": ["To place controls, text, and groups on a screen that must adapt.", "To decide between a tab bar and a sidebar as width changes."],
+    "whenNotToUse": ["To stretch a phone layout across a wide desktop window with no grouping."],
+    "rules": [
+      {"statement": "Give every control a hit region of at least 44 by 44 points. On visionOS, aim for 60 points.", "platforms": ["all"]},
+      {"statement": "Space related items more tightly than unrelated groups, using a 4 or 8 point step.", "platforms": ["all"]},
+      {"statement": "Keep content out of the safe areas and the home indicator.", "platforms": ["ios", "ipados"]},
+      {"statement": "On a narrow width, use a tab bar for a few top-level destinations. On a wide width, use a sidebar.", "platforms": ["web", "ipados", "macos"]},
+      {"statement": "On the web, map safe areas to env(safe-area-inset-*) and let the page reflow instead of scaling the whole layout.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "main",
+      "variants": ["compact", "regular"],
+      "cssNotes": [
+        "Use a spacing scale of 4, 8, 12, 16, 24, and 32 pixels.",
+        "padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left).",
+        "Switch from a bottom navigation bar to a sidebar around 800 pixels of width."
+      ],
+      "accessibility": [
+        "Interactive targets are at least 44 by 44 CSS pixels, with space between neighbors.",
+        "Reading order in the DOM matches the visual order."
+      ]
+    },
+    "related": ["sidebars", "tab-bars", "accessibility"]
+  },
+  {
+    "id": "materials",
+    "title": "Materials",
+    "kind": "foundation",
+    "sourcePath": "/design/human-interface-guidelines/materials",
+    "summary": "Translucency shows what sits behind a bar or sheet. It is a depth cue, not a texture for every surface.",
+    "keywords": ["materials", "glass", "blur", "translucency", "vibrancy"],
+    "whenToUse": ["Behind a toolbar, tab bar, or sheet that floats over content.", "To separate a foreground control from a busy background."],
+    "whenNotToUse": ["On body content, long text, or stacked panels that each blur the last."],
+    "rules": [
+      {"statement": "Use at most one or two translucent layers in a view.", "platforms": ["all"]},
+      {"statement": "Put text on a material only when the fill keeps it readable. Otherwise use an opaque surface.", "platforms": ["all"]},
+      {"statement": "Provide a solid fill when the person has asked for reduced transparency.", "platforms": ["all"]},
+      {"statement": "On the web, use backdrop-filter sparingly and always set an opaque background as the fallback.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "header, dialog",
+      "variants": ["translucent", "solid"],
+      "cssNotes": [
+        "A bar can use background: color-mix(in srgb, var(--color-bg) 80%, transparent) and backdrop-filter: blur(20px).",
+        "Under @media (prefers-reduced-transparency: reduce), drop the blur and use var(--color-bg-elevated).",
+        "Do not stack multiple backdrop-filter layers."
+      ],
+      "accessibility": [
+        "Text on a translucent surface still meets contrast against the worst-case content behind it.",
+        "Honor prefers-reduced-transparency."
+      ]
+    },
+    "related": ["color", "sheets", "toolbars"]
+  },
+  {
+    "id": "motion",
+    "title": "Motion",
+    "kind": "foundation",
+    "sourcePath": "/design/human-interface-guidelines/motion",
+    "summary": "Motion explains what changed, where something went, or that work is still happening.",
+    "keywords": ["motion", "animation", "transition", "reduced-motion"],
+    "whenToUse": ["To show a panel arriving from the control that opened it.", "To indicate progress when a result is not instant."],
+    "whenNotToUse": ["To animate essential text so it can be missed.", "As a looping decoration on content people are trying to read."],
+    "rules": [
+      {"statement": "Prefer short opacity and transform changes over large movements.", "platforms": ["all"]},
+      {"statement": "A transition should connect the control people used with the surface that appeared.", "platforms": ["all"]},
+      {"statement": "When reduced motion is on, replace movement with a fade or an instant change.", "platforms": ["all"]},
+      {"statement": "On the web, keep most transitions under a few hundred milliseconds and disable them under prefers-reduced-motion.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "dialog, nav",
+      "variants": ["fade", "slide", "none"],
+      "cssNotes": [
+        "transition: opacity 180ms ease, transform 180ms ease.",
+        "@media (prefers-reduced-motion: reduce) { transition: none; }",
+        "Do not animate layout properties such as height on large regions."
+      ],
+      "accessibility": [
+        "Nothing important depends on seeing the animation.",
+        "Honor prefers-reduced-motion."
+      ]
+    },
+    "related": ["feedback", "sheets", "loading"]
+  },
+  {
+    "id": "accessibility",
+    "title": "Accessibility",
+    "kind": "foundation",
+    "sourcePath": "/design/human-interface-guidelines/accessibility",
+    "summary": "Every control needs a name, a comfortable target, and a way to work without color, sound, or a precise pointer.",
+    "keywords": ["accessibility", "a11y", "voiceover", "target", "focus", "dynamic-type"],
+    "whenToUse": ["On every interactive control and image that carries meaning.", "When reviewing contrast, focus, and text size before shipping."],
+    "whenNotToUse": ["As a mode that removes features people still need."],
+    "rules": [
+      {"statement": "Give every control an accessible name that states the action, not the icon shape.", "platforms": ["all"]},
+      {"statement": "Keep a hit region of at least 44 by 44 points, and leave space between adjacent targets.", "platforms": ["all"]},
+      {"statement": "Do not use color alone for status, selection, or errors.", "platforms": ["all"]},
+      {"statement": "Support larger text without clipping or overlapping controls.", "platforms": ["all"]},
+      {"statement": "On the web, expose name, role, and state to the accessibility tree and provide a visible keyboard focus.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "button, a, input",
+      "variants": ["name", "role", "state"],
+      "cssNotes": [
+        ":focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }",
+        "Minimum control size: min-width: 44px; min-height: 44px.",
+        "Prefer native elements so role and keyboard behavior come for free."
+      ],
+      "accessibility": [
+        "Icon-only buttons need aria-label or visually hidden text.",
+        "State changes that are not focus moves use an aria-live region sparingly."
+      ]
+    },
+    "related": ["color", "typography", "layout", "voiceover"]
+  },
+  {
+    "id": "dark-mode",
+    "title": "Dark Mode",
+    "kind": "foundation",
+    "sourcePath": "/design/human-interface-guidelines/dark-mode",
+    "summary": "Design light and dark as two appearances of the same hierarchy, not as an inverted screenshot.",
+    "keywords": ["dark", "dark-mode", "appearance", "theme"],
+    "whenToUse": ["Whenever the product has a light appearance.", "When elevated sheets and bars need to stay distinct from the base background."],
+    "whenNotToUse": ["To invert brand artwork, photos, or logos."],
+    "rules": [
+      {"statement": "Keep the same roles in both appearances and change the values, not the structure.", "platforms": ["all"]},
+      {"statement": "In dark appearance, raised surfaces can be slightly lighter than the base background.", "platforms": ["all"]},
+      {"statement": "Check text, separators, and the accent color on both appearances.", "platforms": ["all"]},
+      {"statement": "On the web, follow prefers-color-scheme unless the person has chosen an appearance in the product.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "html",
+      "variants": ["light", "dark"],
+      "cssNotes": [
+        "color-scheme: light dark on the document.",
+        "Override the same custom properties inside @media (prefers-color-scheme: dark).",
+        "If you offer a manual theme, set data-theme on the root and do not fight the system choice without a control."
+      ],
+      "accessibility": [
+        "Contrast targets apply in both appearances.",
+        "Do not flash a light theme before the dark theme loads."
+      ]
+    },
+    "related": ["color", "materials"]
+  },
+  {
+    "id": "writing",
+    "title": "Writing",
+    "kind": "foundation",
+    "sourcePath": "/design/human-interface-guidelines/writing",
+    "summary": "Interface copy names the action, stays short, and tells people what to do next when something fails.",
+    "keywords": ["writing", "copy", "label", "microcopy", "error"],
+    "whenToUse": ["On buttons, empty states, errors, and permission explanations.", "When a symbol is not universally understood."],
+    "whenNotToUse": ["To add a greeting or joke inside an alert.", "To describe the control type, as in 'Click the button below'."],
+    "rules": [
+      {"statement": "Start button labels with a verb and keep them to a few words, such as Add to Cart.", "platforms": ["all"]},
+      {"statement": "An error says what happened and how to fix it, without blaming the person.", "platforms": ["all"]},
+      {"statement": "Use the same term for the same object throughout the product.", "platforms": ["all"]},
+      {"statement": "On the web, the visible label and the accessible name should match.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "button, label, p",
+      "variants": ["action", "empty", "error"],
+      "cssNotes": [
+        "Keep button text on one line when you can. Allow wrapping instead of shrinking the type size.",
+        "Place helper text under the field it describes, in the secondary label color."
+      ],
+      "accessibility": [
+        "Do not put essential instructions only in placeholder text.",
+        "Error text is linked to the field with aria-describedby."
+      ]
+    },
+    "related": ["buttons", "alerts", "entering-data"]
+  },
+  {
+    "id": "right-to-left",
+    "title": "Right to left",
+    "kind": "foundation",
+    "sourcePath": "/design/human-interface-guidelines/right-to-left",
+    "summary": "Mirror the layout for right-to-left languages. Leave numbers, brand marks, and directional media as they are.",
+    "keywords": ["rtl", "right-to-left", "arabic", "hebrew", "bidi"],
+    "whenToUse": ["When the product supports Arabic, Hebrew, or another right-to-left language."],
+    "whenNotToUse": ["To flip photographs, playback controls that represent time, or a logo that has a fixed direction."],
+    "rules": [
+      {"statement": "Mirror navigation, alignment, and the position of the primary action.", "platforms": ["all"]},
+      {"statement": "Keep phone numbers, clocks, and media timelines in their natural direction.", "platforms": ["all"]},
+      {"statement": "On the web, set dir on the document and use logical properties such as margin-inline and padding-inline.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "html",
+      "variants": ["ltr", "rtl"],
+      "cssNotes": [
+        "Use margin-inline, padding-inline, inset-inline, and text-align: start.",
+        "Flex and grid with logical properties mirror without a separate stylesheet.",
+        "Set dir='rtl' from the locale, not from a CSS hack."
+      ],
+      "accessibility": [
+        "The accessibility tree follows the document direction.",
+        "Icons that mean forward or back should mirror; icons that depict an object should not."
+      ]
+    },
+    "related": ["layout", "writing", "icons"]
+  },
+  {
+    "id": "icons",
+    "title": "Icons",
+    "kind": "foundation",
+    "sourcePath": "/design/human-interface-guidelines/icons",
+    "summary": "An icon stands for one familiar action. When the meaning is not obvious, add a label.",
+    "keywords": ["icon", "symbol", "sf-symbols", "glyph"],
+    "whenToUse": ["For a standard action such as share, search, close, or add.", "Beside a short label in a toolbar or tab."],
+    "whenNotToUse": ["As the only label for a novel or destructive action.", "To ship Apple's SF Symbols artwork in a product that is not licensed to do so."],
+    "rules": [
+      {"statement": "Use one symbol per action and keep the same symbol for that action everywhere.", "platforms": ["all"]},
+      {"statement": "Cite an SF Symbol by name, such as square.and.arrow.up for share, without embedding the symbol artwork.", "platforms": ["all"]},
+      {"statement": "Add a text label when the symbol is not a common action.", "platforms": ["all"]},
+      {"statement": "On the web, use an icon set you have a license for, and give icon-only buttons an accessible name.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "svg",
+      "variants": ["icon-only", "icon-and-label"],
+      "cssNotes": [
+        "Size icons on the text grid, often 20 or 24 pixels, and align them to the label cap height.",
+        "Use currentColor so icons follow the label color in both appearances.",
+        "Do not hotlink Apple's HIG artwork or bundle SF Symbols."
+      ],
+      "accessibility": [
+        "Decorative icons are aria-hidden. Meaningful icons have a text alternative.",
+        "The accessible name matches the visible label when both are present."
+      ]
+    },
+    "related": ["sf-symbols", "buttons", "tab-bars"]
+  },
+  {
+    "id": "buttons",
+    "title": "Buttons",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/buttons",
+    "summary": "A button performs an immediate action. Style shows which action is preferred; the label says what it does.",
+    "keywords": ["button", "cta", "primary", "destructive", "submit"],
+    "whenToUse": ["For an action that happens as soon as the control is activated.", "To offer one preferred action and a quieter alternative."],
+    "whenNotToUse": ["To open a list of commands. Use a menu.", "To switch a setting that takes effect immediately. Use a toggle."],
+    "rules": [
+      {"statement": "Use at most one or two prominent buttons in a view.", "platforms": ["all"]},
+      {"statement": "Distinguish the preferred action with prominence, not with a different size.", "platforms": ["all"]},
+      {"statement": "Roles are normal, primary, cancel, and destructive. Do not give the primary role to an action that destroys data.", "platforms": ["all"]},
+      {"statement": "Show a pressed state, and keep the hit region at least 44 by 44 points.", "platforms": ["all"]},
+      {"statement": "Label the button with a short verb in title case.", "platforms": ["all"]},
+      {"statement": "On visionOS, prefer a visible background shape and keep button centers at least 60 points apart.", "platforms": ["visionos"]},
+      {"statement": "On watchOS, a primary action can span the width of the screen.", "platforms": ["watchos"]},
+      {"statement": "On the web, use a button element. A primary button uses the accent fill. A destructive button uses the danger color and asks for confirmation when data would be lost.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "button",
+      "variants": ["primary", "secondary", "plain", "destructive"],
+      "cssNotes": [
+        "button { min-height: 44px; padding-inline: 16px; border-radius: 8px; font: inherit; }",
+        "Primary: background var(--color-accent), label in a contrasting color. Secondary: transparent or elevated fill with an accent label.",
+        "type=submit inside a form. type=button everywhere else. Do not use a clickable div."
+      ],
+      "accessibility": [
+        "The accessible name is the visible label.",
+        "Disabled buttons stay in the tab order only if you explain why they are unavailable; otherwise remove the action."
+      ]
+    },
+    "related": ["toggles", "menus", "alerts"]
+  },
+  {
+    "id": "text-fields",
+    "title": "Text fields",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/text-fields",
+    "summary": "A text field collects a short value. The label says what to enter, and the field type matches the data.",
+    "keywords": ["text-field", "input", "form", "placeholder", "password"],
+    "whenToUse": ["For a name, email, search query, or other short value the person must type."],
+    "whenNotToUse": ["For a value chosen from a known set. Use a picker.", "For a paragraph of text. Use a text view."],
+    "rules": [
+      {"statement": "Put a visible label with the field. Placeholder text is a hint, not the label.", "platforms": ["all"]},
+      {"statement": "Choose the most specific input type, such as email or password.", "platforms": ["all"]},
+      {"statement": "Keep the person's text when validation fails, and explain the fix next to the field.", "platforms": ["all"]},
+      {"statement": "On the web, connect the label with for/id, set autocomplete, and point aria-describedby at the error.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "input",
+      "variants": ["text", "email", "password", "search", "url", "tel"],
+      "cssNotes": [
+        "Place the label above the field. The field uses the body type size so mobile browsers do not zoom on focus.",
+        "input { min-height: 44px; width: 100%; font: inherit; background: var(--color-bg-elevated); color: var(--color-label); }",
+        "Mark aria-invalid when the value is wrong."
+      ],
+      "accessibility": [
+        "Every field has a label element or aria-label.",
+        "Password fields can be revealed without removing the secure default."
+      ]
+    },
+    "related": ["entering-data", "search-fields", "pickers"]
+  },
+  {
+    "id": "toggles",
+    "title": "Toggles",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/toggles",
+    "summary": "A toggle changes a setting immediately. The label names the outcome that is on.",
+    "keywords": ["toggle", "switch", "setting"],
+    "whenToUse": ["For a setting that takes effect as soon as it changes, such as Face ID or notifications."],
+    "whenNotToUse": ["For a choice that is saved with a separate submit button. Use a checkbox.", "For several mutually exclusive options. Use a segmented control or picker."],
+    "rules": [
+      {"statement": "The change applies immediately. Do not also require a Save button for that single setting.", "platforms": ["all"]},
+      {"statement": "Label the outcome, such as Notifications, rather than the words On and Off alone.", "platforms": ["all"]},
+      {"statement": "On the web, use a switch semantics and expose the checked state.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "input",
+      "variants": ["switch"],
+      "cssNotes": [
+        "input[type=checkbox][role=switch], or a button with aria-pressed when the control is custom.",
+        "The label is beside the switch, and the whole row meets 44 pixels.",
+        "Do not rely on green and gray alone. The position and aria-checked carry the state."
+      ],
+      "accessibility": [
+        "role=switch and aria-checked=true or false.",
+        "The accessible name is the setting label."
+      ]
+    },
+    "related": ["settings", "segmented-controls", "buttons"]
+  },
+  {
+    "id": "segmented-controls",
+    "title": "Segmented controls",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/segmented-controls",
+    "summary": "A segmented control shows a few mutually exclusive choices that all stay visible.",
+    "keywords": ["segmented", "segment", "filter", "radio"],
+    "whenToUse": ["For two to five options that filter or change the current view."],
+    "whenNotToUse": ["For top-level navigation between unrelated areas. Use tabs or a sidebar.", "For a long list of choices. Use a picker."],
+    "rules": [
+      {"statement": "Keep every option visible and similar in length.", "platforms": ["all"]},
+      {"statement": "Selection changes the content in place. It does not push a new screen.", "platforms": ["all"]},
+      {"statement": "On the web, use a radiogroup when the control changes a setting, and a tablist only when each segment shows a panel.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "div",
+      "variants": ["radiogroup", "tablist"],
+      "cssNotes": [
+        "Lay segments in one row with an equal flex share. The selected segment uses the accent fill.",
+        "Wrap to a select only if the labels cannot fit without shrinking below body size.",
+        "The group has an accessible name."
+      ],
+      "accessibility": [
+        "Arrow keys move between segments. The selected segment exposes aria-checked or aria-selected.",
+        "Do not use this pattern for site navigation."
+      ]
+    },
+    "related": ["pickers", "tab-bars", "toggles"]
+  },
+  {
+    "id": "pickers",
+    "title": "Pickers",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/pickers",
+    "summary": "A picker chooses from a known set so people do not have to type a value the product already understands.",
+    "keywords": ["picker", "select", "dropdown", "date", "choice"],
+    "whenToUse": ["For a date, a quantity, or a short list of valid values."],
+    "whenNotToUse": ["For free text such as a name.", "For two simple options that fit on screen. Use a segmented control."],
+    "rules": [
+      {"statement": "Show the current value in the closed control.", "platforms": ["all"]},
+      {"statement": "Order options in a way people expect, such as chronological or alphabetical, and include only valid choices.", "platforms": ["all"]},
+      {"statement": "On the web, use a native select for a short list and a dialog or listbox when the list is long or needs search.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "select",
+      "variants": ["select", "listbox", "date"],
+      "cssNotes": [
+        "Native select keeps the platform picker, including date and number wheels where the browser provides them.",
+        "A custom listbox is a button that shows the value plus a listbox anchored to it.",
+        "min-height: 44px on the closed control."
+      ],
+      "accessibility": [
+        "The closed control's name includes the field label and the current value.",
+        "A custom listbox supports arrow keys, type-ahead, and Escape."
+      ]
+    },
+    "related": ["entering-data", "pop-up-buttons", "segmented-controls"]
+  },
+  {
+    "id": "lists-and-tables",
+    "title": "Lists and tables",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/lists-and-tables",
+    "summary": "A list is a column of items with one primary label. A table is for data that is compared across columns.",
+    "keywords": ["list", "table", "row", "cell"],
+    "whenToUse": ["To present many items of the same kind.", "To compare values down a column."],
+    "whenNotToUse": ["For a handful of settings that are not a repeating item. A grouped form is enough.", "For a data table when each row is really navigation."],
+    "rules": [
+      {"statement": "Give each row one primary label. Put secondary details in a quieter style.", "platforms": ["all"]},
+      {"statement": "A row that navigates should look like it navigates, with a disclosure or a link.", "platforms": ["all"]},
+      {"statement": "Put frequent row actions in a small set of buttons or a swipe action. Put the rest in a menu.", "platforms": ["all"]},
+      {"statement": "On the web, use a list for navigation and a table only when the content is tabular data.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "ul, table",
+      "variants": ["plain", "grouped", "data-table"],
+      "cssNotes": [
+        "Rows are at least 44 pixels tall. Separate them with a hairline using --color-separator.",
+        "A navigation row is an a or button that fills the row, not a click handler on a div.",
+        "Tables get a caption or an accessible name, and headers use th scope."
+      ],
+      "accessibility": [
+        "List rows that are links expose the destination in the name.",
+        "Sortable columns expose sort state."
+      ]
+    },
+    "related": ["sidebars", "searching", "disclosure-controls"]
+  },
+  {
+    "id": "tab-bars",
+    "title": "Tab bars",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/tab-bars",
+    "summary": "A tab bar holds a few stable top-level destinations.",
+    "keywords": ["tab", "tabs", "tab-bar", "bottom-nav"],
+    "whenToUse": ["For three to five areas people switch between often on a narrow screen."],
+    "whenNotToUse": ["For more destinations than fit comfortably. Use a sidebar.", "For filters inside one screen. Use a segmented control."],
+    "rules": [
+      {"statement": "Keep the tab bar stable. Do not change its items as people move within a section.", "platforms": ["all"]},
+      {"statement": "Each tab has a short label and, when you use a symbol, the same symbol every time.", "platforms": ["all"]},
+      {"statement": "On a wide web layout, replace a bottom tab bar with a sidebar.", "platforms": ["web"]},
+      {"statement": "Mark the selected tab.", "platforms": ["all"]}
+    ],
+    "web": {
+      "element": "nav",
+      "variants": ["bottom", "sidebar"],
+      "cssNotes": [
+        "nav { display: flex; } with an a for each destination and aria-current=page on the active one.",
+        "On narrow screens, position the nav at the bottom with padding-bottom: env(safe-area-inset-bottom).",
+        "At wider widths, move the same links into a sidebar. Do not show both."
+      ],
+      "accessibility": [
+        "The landmark is named, for example aria-label=Primary.",
+        "The current page is aria-current=page, not color alone."
+      ]
+    },
+    "related": ["sidebars", "layout", "icons"]
+  },
+  {
+    "id": "sidebars",
+    "title": "Sidebars",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/sidebars",
+    "summary": "A sidebar lists many destinations or a source list beside a detail pane.",
+    "keywords": ["sidebar", "navigation", "split-view", "drawer"],
+    "whenToUse": ["When there are more sections than a tab bar can hold.", "When people need to keep a list and a detail on screen together."],
+    "whenNotToUse": ["On a narrow phone layout where a tab bar or a single stack is clearer.", "For commands that act on the current view. Use a toolbar or menu."],
+    "rules": [
+      {"statement": "The sidebar selects a destination. It does not perform a one-off command.", "platforms": ["all"]},
+      {"statement": "On a narrow width, collapse the sidebar behind a control instead of squeezing the detail.", "platforms": ["web", "ipados", "macos"]},
+      {"statement": "Show which item is selected.", "platforms": ["all"]}
+    ],
+    "web": {
+      "element": "nav",
+      "variants": ["persistent", "collapsed"],
+      "cssNotes": [
+        "A two-column grid: sidebar around 240 to 280 pixels, detail in the remaining space.",
+        "Below about 800 pixels, hide the sidebar and open it from a button as a dialog or disclosure.",
+        "Selected item uses accent text or a quiet fill plus aria-current."
+      ],
+      "accessibility": [
+        "nav aria-label describes the sidebar.",
+        "When collapsed into a dialog, focus moves into it and returns to the button that opened it."
+      ]
+    },
+    "related": ["tab-bars", "split-views", "lists-and-tables"]
+  },
+  {
+    "id": "toolbars",
+    "title": "Toolbars",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/toolbars",
+    "summary": "A toolbar holds actions for the current view, with the title in the middle or leading side and the main action at the trailing side.",
+    "keywords": ["toolbar", "navbar", "bar-button", "header"],
+    "whenToUse": ["For actions that apply to the screen people are looking at.", "For a back control and a title."],
+    "whenNotToUse": ["For top-level navigation between sections. Use a tab bar or sidebar.", "For a long list of rare commands. Use a menu."],
+    "rules": [
+      {"statement": "Toolbar items act on the current view.", "platforms": ["all"]},
+      {"statement": "Place the primary action at the trailing end in left-to-right layouts.", "platforms": ["all"]},
+      {"statement": "Icon-only items need a tooltip and an accessible name.", "platforms": ["all"]},
+      {"statement": "On the web, the toolbar is a header, and every item is a button or a link.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "header",
+      "variants": ["title", "actions"],
+      "cssNotes": [
+        "header { display: flex; align-items: center; min-height: 44px; gap: 8px; }",
+        "The title is an h1 for the screen. Actions sit in a group at the end.",
+        "A translucent bar can use the materials guidance, with a solid fallback."
+      ],
+      "accessibility": [
+        "Icon buttons have aria-label.",
+        "The header does not trap keyboard focus."
+      ]
+    },
+    "related": ["buttons", "menus", "materials"]
+  },
+  {
+    "id": "search-fields",
+    "title": "Search fields",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/search-fields",
+    "summary": "A search field finds content. It shows the query and offers a way to clear it.",
+    "keywords": ["search", "search-field", "filter", "query"],
+    "whenToUse": ["When a list is long enough that scrolling is a poor way to find an item."],
+    "whenNotToUse": ["On a short list people can scan.", "As the only navigation through the product."],
+    "rules": [
+      {"statement": "Show the current query and a clear control once there is text.", "platforms": ["all"]},
+      {"statement": "Say what the field searches when the scope is not obvious.", "platforms": ["all"]},
+      {"statement": "On the web, use input type=search inside a search landmark, with a visible label.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "input",
+      "variants": ["search"],
+      "cssNotes": [
+        "form role=search, or a search element, containing label and input type=search.",
+        "The clear control is a button with an accessible name, shown only when the field has a value.",
+        "Results replace or filter the list below. Do not navigate away on each keystroke."
+      ],
+      "accessibility": [
+        "The input has a label such as Search.",
+        "If results update live, mark the results region aria-live=polite only when the update is infrequent enough to be useful."
+      ]
+    },
+    "related": ["searching", "text-fields", "lists-and-tables"]
+  },
+  {
+    "id": "menus",
+    "title": "Menus",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/menus",
+    "summary": "A menu lists commands related to a control or the current selection.",
+    "keywords": ["menu", "context-menu", "dropdown", "commands"],
+    "whenToUse": ["For secondary commands that do not fit in the toolbar.", "For actions on a selected item."],
+    "whenNotToUse": ["For navigation to another section of the product. Use a sidebar or tabs.", "For a single primary action. Use a button."],
+    "rules": [
+      {"statement": "Menu items are commands. Keep destructive commands last and label them clearly.", "platforms": ["all"]},
+      {"statement": "Use a few items with short labels. Group related commands.", "platforms": ["all"]},
+      {"statement": "On the web, the menu opens from a button, closes on Escape or outside click, and supports arrow keys.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "button",
+      "variants": ["menu", "menuitem"],
+      "cssNotes": [
+        "button aria-haspopup=menu aria-expanded, controlling a menu element positioned at the button.",
+        "Items are menuitem buttons. A danger item uses --color-danger for its label.",
+        "Prefer the popover API or a positioned list. Do not use a native select for commands."
+      ],
+      "accessibility": [
+        "Arrow keys move, Enter activates, Escape closes and returns focus to the button.",
+        "Disabled commands remain visible when people need to know they exist, and expose aria-disabled."
+      ]
+    },
+    "related": ["context-menus", "buttons", "toolbars"]
+  },
+  {
+    "id": "sheets",
+    "title": "Sheets",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/sheets",
+    "summary": "A sheet is a short task that appears above the current view and returns people there when it is done.",
+    "keywords": ["sheet", "modal", "dialog", "checkout", "form"],
+    "whenToUse": ["For a focused task such as composing, filtering, or confirming a purchase.", "When the parent screen should stay in context."],
+    "whenNotToUse": ["For a long multi-step flow. Use a full screen.", "For a critical irreversible decision with no other content. Use an alert."],
+    "rules": [
+      {"statement": "Give the sheet a title, a way to dismiss it, and a primary action when the task has one.", "platforms": ["all"]},
+      {"statement": "Do not stack sheets. Finish or dismiss the current one first.", "platforms": ["all"]},
+      {"statement": "On a small web viewport, a sheet can use the full height. On a wide viewport, keep it a dialog anchored to the task.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "dialog",
+      "variants": ["modal", "full-height"],
+      "cssNotes": [
+        "dialog.showModal() with a form inside. The primary button is type=submit. Cancel is type=button and calls close().",
+        "On narrow screens, dialog { width: 100%; height: 100%; max-height: 100%; margin: 0; }.",
+        "On wide screens, max-width around 32rem and a radius. Use the materials guidance only for a non-modal panel."
+      ],
+      "accessibility": [
+        "Focus moves into the dialog and returns to the opener on close.",
+        "aria-labelledby points at the sheet title. Escape dismisses when dismissal is safe."
+      ]
+    },
+    "related": ["modality", "alerts", "buttons"]
+  },
+  {
+    "id": "alerts",
+    "title": "Alerts",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/alerts",
+    "summary": "An alert interrupts for a problem or a decision people need to handle before they continue.",
+    "keywords": ["alert", "dialog", "confirm", "destructive", "error"],
+    "whenToUse": ["To confirm a destructive action.", "To report a problem that blocks the current task."],
+    "whenNotToUse": ["To celebrate success. Use inline feedback.", "To ask for a permission before the person understands why."],
+    "rules": [
+      {"statement": "Show one alert at a time. The title is the situation, the message is the consequence, and the buttons are actions.", "platforms": ["all"]},
+      {"statement": "The default button is the safe action. A destructive action is not the default.", "platforms": ["all"]},
+      {"statement": "Use at most a few buttons, each with a specific verb rather than Yes and No when you can be specific.", "platforms": ["all"]},
+      {"statement": "On the web, use an alertdialog, not window.alert, so the title, message, and actions follow this structure.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "dialog",
+      "variants": ["confirm", "destructive", "error"],
+      "cssNotes": [
+        "dialog role=alertdialog, a short h2, one paragraph, and a button row.",
+        "The safe action comes last in left-to-right reading order so it sits at the trailing edge, and it receives initial focus when the choice is risky.",
+        "The destructive button uses --color-danger and is not type=submit by default."
+      ],
+      "accessibility": [
+        "aria-labelledby and aria-describedby point at the title and message.",
+        "Focus is trapped until the person chooses an action."
+      ]
+    },
+    "related": ["modality", "buttons", "feedback"]
+  },
+  {
+    "id": "popovers",
+    "title": "Popovers",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/popovers",
+    "summary": "A popover is a small surface anchored to the control that opened it.",
+    "keywords": ["popover", "popup", "tooltip", "anchored"],
+    "whenToUse": ["For a short piece of related content or a small set of options tied to one control."],
+    "whenNotToUse": ["For a task with several fields. Use a sheet.", "For information people must not miss. Do not hide required content in a popover."],
+    "rules": [
+      {"statement": "Anchor the popover to the control that opened it, and point it at that control.", "platforms": ["all"]},
+      {"statement": "Dismiss it when people activate outside it or press Escape.", "platforms": ["all"]},
+      {"statement": "On a narrow web layout, prefer a sheet if the popover cannot fit.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "div",
+      "variants": ["popover", "sheet-fallback"],
+      "cssNotes": [
+        "button aria-expanded controls an element using the popover API, positioned next to the button.",
+        "Keep the popover within the viewport. If it cannot, use a dialog sheet instead.",
+        "Padding at least 12 pixels, type at body or callout size."
+      ],
+      "accessibility": [
+        "Focus can move into the popover. Escape returns focus to the button.",
+        "Hover-only tooltips are not the only way to read the content. Focus shows them too."
+      ]
+    },
+    "related": ["menus", "sheets", "offering-help"]
+  },
+  {
+    "id": "progress-indicators",
+    "title": "Progress indicators",
+    "kind": "component",
+    "sourcePath": "/design/human-interface-guidelines/progress-indicators",
+    "summary": "Show determinate progress when you know how much work remains. Use an indeterminate indicator when you do not.",
+    "keywords": ["progress", "spinner", "loading", "busy"],
+    "whenToUse": ["While a request, upload, or other wait is visible.", "Inside a button when that button's action is in flight."],
+    "whenNotToUse": ["For a wait so short that the indicator would flash.", "As a full-screen block when part of the content is already ready."],
+    "rules": [
+      {"statement": "Use a determinate bar when the fraction remaining is known. Use a spinner when it is not.", "platforms": ["all"]},
+      {"statement": "A busy button can replace its icon with a spinner and change its label, such as from Save to Saving.", "platforms": ["all"]},
+      {"statement": "On the web, pair the indicator with text. A spinner alone is not the status.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "progress",
+      "variants": ["determinate", "indeterminate"],
+      "cssNotes": [
+        "progress for a known value. An indeterminate wait can be a status element with a CSS spinner.",
+        "If the button is busy, set aria-busy and disabled on that button only.",
+        "Reserve the indicator's space so the layout does not jump."
+      ],
+      "accessibility": [
+        "progress has a label. Determinate progress exposes the value.",
+        "Honor prefers-reduced-motion by reducing or removing the spin."
+      ]
+    },
+    "related": ["loading", "feedback", "buttons"]
+  },
+  {
+    "id": "onboarding",
+    "title": "Onboarding",
+    "kind": "pattern",
+    "sourcePath": "/design/human-interface-guidelines/onboarding",
+    "summary": "Onboarding gets people to the first useful task quickly and asks only for what that task needs.",
+    "keywords": ["onboarding", "welcome", "first-run", "signup", "launch"],
+    "whenToUse": ["When the first screen would otherwise be empty or unclear.", "When a permission is required for the feature the person just chose."],
+    "whenNotToUse": ["To present a tour of every feature.", "To ask for an account, notifications, and location before any value is shown."],
+    "rules": [
+      {"statement": "Lead with the task, not a carousel of marketing pages.", "platforms": ["all"]},
+      {"statement": "Request a permission in context, after the person has asked for the feature that needs it.", "platforms": ["all"]},
+      {"statement": "Offer a way to skip optional setup.", "platforms": ["all"]},
+      {"statement": "On the web, keep first-run steps on one route people can leave, and do not request notification permission on load.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "main",
+      "variants": ["value-first", "permission", "skip"],
+      "cssNotes": [
+        "One primary button for the next step. A quiet text button for Skip.",
+        "Do not autoplay a tour. If you show steps, show the step count.",
+        "Store completion locally so the intro does not repeat."
+      ],
+      "accessibility": [
+        "The step heading is the page heading.",
+        "Skip is a real button, not a timed dismissal."
+      ]
+    },
+    "related": ["launching", "managing-accounts", "privacy"]
+  },
+  {
+    "id": "modality",
+    "title": "Modality",
+    "kind": "pattern",
+    "sourcePath": "/design/human-interface-guidelines/modality",
+    "summary": "Modality pauses the parent view for a task or decision that people should finish or explicitly dismiss.",
+    "keywords": ["modality", "modal", "sheet", "dialog", "focus"],
+    "whenToUse": ["When continuing underneath would lose data or make the choice ambiguous."],
+    "whenNotToUse": ["For content people may want to compare with the parent.", "To stack a second modal on the first."],
+    "rules": [
+      {"statement": "Use a sheet for a task and an alert for a decision.", "platforms": ["all"]},
+      {"statement": "Always offer an explicit dismiss or cancel path.", "platforms": ["all"]},
+      {"statement": "Do not open a modal on top of another modal.", "platforms": ["all"]},
+      {"statement": "On the web, a modal dialog traps focus and returns it to the control that opened it.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "dialog",
+      "variants": ["sheet", "alert"],
+      "cssNotes": [
+        "Use the dialog element with showModal so the browser provides the top layer and inert background.",
+        "The backdrop is a dimmer, not another blurred stack.",
+        "Closing restores focus."
+      ],
+      "accessibility": [
+        "The element behind the dialog is inert.",
+        "Escape closes a sheet. An alert closes only from its actions when the choice is required."
+      ]
+    },
+    "related": ["sheets", "alerts", "popovers"]
+  },
+  {
+    "id": "entering-data",
+    "title": "Entering data",
+    "kind": "pattern",
+    "sourcePath": "/design/human-interface-guidelines/entering-data",
+    "summary": "Ask for the smallest amount of information, with the control that makes mistakes unlikely.",
+    "keywords": ["form", "entering-data", "input", "validation", "checkout"],
+    "whenToUse": ["For a form, checkout, or any screen that collects values."],
+    "whenNotToUse": ["To ask for data you already have or do not need for the task."],
+    "rules": [
+      {"statement": "Pick the control that matches the data: field, picker, toggle, or stepper.", "platforms": ["all"]},
+      {"statement": "Validate when the person leaves a field or submits, and keep what they typed.", "platforms": ["all"]},
+      {"statement": "Put the error next to the field and say how to fix it.", "platforms": ["all"]},
+      {"statement": "On the web, turn on autocomplete for names, addresses, and payment details the browser can fill.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "form",
+      "variants": ["inline-error", "summary"],
+      "cssNotes": [
+        "One column on narrow screens. Labels above fields. Related fields in a fieldset with a legend.",
+        "The submit button states the outcome, such as Place Order, and shows a busy state while the request runs.",
+        "novalidate only if you replace the browser's messages with your own, still tied to each field."
+      ],
+      "accessibility": [
+        "Errors use aria-invalid and aria-describedby.",
+        "A form-level error summary moves focus to the summary and links to each field."
+      ]
+    },
+    "related": ["text-fields", "pickers", "buttons", "sheets"]
+  },
+  {
+    "id": "feedback",
+    "title": "Feedback",
+    "kind": "pattern",
+    "sourcePath": "/design/human-interface-guidelines/feedback",
+    "summary": "Feedback tells people what happened and what they can do next, close to the action that caused it.",
+    "keywords": ["feedback", "toast", "empty", "error", "success", "status"],
+    "whenToUse": ["After a save, a failed request, or an empty result.", "To show progress while work continues."],
+    "whenNotToUse": ["As an alert for ordinary success.", "As a message that disappears before it can be read."],
+    "rules": [
+      {"statement": "Confirm a meaningful result near the action. Do not send people to another screen just to say it worked.", "platforms": ["all"]},
+      {"statement": "An error names the problem and the next step.", "platforms": ["all"]},
+      {"statement": "An empty state explains why it is empty and offers the action that fills it.", "platforms": ["all"]},
+      {"statement": "On the web, a transient status can use a polite live region. A problem that needs a decision uses an alert.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "p",
+      "variants": ["inline", "empty", "status"],
+      "cssNotes": [
+        "Place success or error text directly under the control or at the top of the form.",
+        "Empty states sit in the content region: one sentence, then a primary button.",
+        "Do not rely on a toast as the only copy of an error."
+      ],
+      "accessibility": [
+        "role=status for non-critical updates.",
+        "Errors that block progress are linked from an error summary."
+      ]
+    },
+    "related": ["alerts", "loading", "writing"]
+  },
+  {
+    "id": "loading",
+    "title": "Loading",
+    "kind": "pattern",
+    "sourcePath": "/design/human-interface-guidelines/loading",
+    "summary": "Show content as soon as it exists. Indicate waiting only when the person would otherwise wonder if the product stalled.",
+    "keywords": ["loading", "skeleton", "spinner", "placeholder"],
+    "whenToUse": ["When a screen or a region cannot render its real content yet."],
+    "whenNotToUse": ["To block the whole product for a request that only affects one region.", "For a delay so short the indicator flashes."],
+    "rules": [
+      {"statement": "Prefer showing the shell of the screen and filling it in to blocking on a blank page.", "platforms": ["all"]},
+      {"statement": "Use determinate progress when you know the fraction remaining.", "platforms": ["all"]},
+      {"statement": "On the web, reserve the space of the content that is loading so the page does not jump.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "main",
+      "variants": ["skeleton", "progress", "region"],
+      "cssNotes": [
+        "A skeleton uses the same layout as the loaded content and a quiet elevated fill.",
+        "Set aria-busy on the region that is loading, not on the whole document, once the first content is visible.",
+        "Do not animate a skeleton when prefers-reduced-motion is set."
+      ],
+      "accessibility": [
+        "The loading region has an accessible name such as Loading articles.",
+        "When content arrives, do not move focus unless the person was waiting on that result."
+      ]
+    },
+    "related": ["progress-indicators", "feedback", "motion"]
+  },
+  {
+    "id": "searching",
+    "title": "Searching",
+    "kind": "pattern",
+    "sourcePath": "/design/human-interface-guidelines/searching",
+    "summary": "Search tells people what scope it covers, keeps the query visible, and helps when nothing matches.",
+    "keywords": ["search", "results", "filter", "empty-results"],
+    "whenToUse": ["To find an item in a long collection or across the product."],
+    "whenNotToUse": ["To hide poor organization of a small set of items."],
+    "rules": [
+      {"statement": "State the scope, such as this mailbox or the whole library, when more than one scope exists.", "platforms": ["all"]},
+      {"statement": "Keep the query visible while results are showing.", "platforms": ["all"]},
+      {"statement": "An empty result suggests a next step, such as clearing a filter or checking the spelling.", "platforms": ["all"]},
+      {"statement": "On the web, reflect the query in the URL when the result is a destination people might share or revisit.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "search",
+      "variants": ["scoped", "global"],
+      "cssNotes": [
+        "The field stays above the results. Filters are chips or a menu, not a second hidden form.",
+        "Highlighting the match is optional and never the only way to see why a row matched.",
+        "Use the search field card for the control itself."
+      ],
+      "accessibility": [
+        "Results are a list or a live region with a count people can find, such as 12 results.",
+        "Clear search is a button."
+      ]
+    },
+    "related": ["search-fields", "lists-and-tables", "feedback"]
+  },
+  {
+    "id": "settings",
+    "title": "Settings",
+    "kind": "pattern",
+    "sourcePath": "/design/human-interface-guidelines/settings",
+    "summary": "Settings change how the product behaves. The product should still make sense if a person never opens them.",
+    "keywords": ["settings", "preferences", "options"],
+    "whenToUse": ["For choices that persist, such as appearance, notifications, or account details."],
+    "whenNotToUse": ["As a second home for primary features.", "For a value that only applies to the current task. Keep that next to the task."],
+    "rules": [
+      {"statement": "Choose safe, useful defaults so settings are optional.", "platforms": ["all"]},
+      {"statement": "Group related settings and put infrequent or destructive ones farther down.", "platforms": ["all"]},
+      {"statement": "A setting's label names the outcome. Helper text explains the consequence when it is not obvious.", "platforms": ["all"]},
+      {"statement": "On the web, a settings screen is a grouped list of labeled controls, not a wall of unlabeled inputs.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "form",
+      "variants": ["grouped-list", "destructive"],
+      "cssNotes": [
+        "Group with fieldset and legend, or with h2 headings and lists.",
+        "Toggles apply immediately. Fields that are edited together can share a Save button in the toolbar.",
+        "Destructive account actions sit in their own group at the end and require confirmation."
+      ],
+      "accessibility": [
+        "Each control has a visible label.",
+        "Helper text is tied to the control with aria-describedby."
+      ]
+    },
+    "related": ["toggles", "lists-and-tables", "sidebars"]
+  },
+  {
+    "id": "managing-accounts",
+    "title": "Managing accounts",
+    "kind": "pattern",
+    "sourcePath": "/design/human-interface-guidelines/managing-accounts",
+    "summary": "An account should unlock something people already want, and signing out or deleting it should be easy to find.",
+    "keywords": ["account", "login", "sign-in", "signup", "profile"],
+    "whenToUse": ["When the product stores personal data or syncs across devices."],
+    "whenNotToUse": ["Before people have seen why an account helps.", "As a gate on content that does not need an identity."],
+    "rules": [
+      {"statement": "Explain what the account unlocks before asking people to create one.", "platforms": ["all"]},
+      {"statement": "If you offer third-party sign-in on an Apple platform, also offer Sign in with Apple.", "platforms": ["ios", "ipados", "macos", "visionos", "web"]},
+      {"statement": "Put sign-out and account deletion where people manage the account, and confirm deletion.", "platforms": ["all"]},
+      {"statement": "On the web, keep the signed-in state visible and do not hide account deletion.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "form",
+      "variants": ["sign-in", "account", "delete"],
+      "cssNotes": [
+        "Sign-in offers the same providers you show elsewhere, with clear button labels.",
+        "The account screen repeats the identity, then settings, then sign out, then delete account.",
+        "Deletion uses the alert pattern and requires an explicit confirm."
+      ],
+      "accessibility": [
+        "Password fields have autocomplete=current-password or new-password.",
+        "Errors from a failed sign-in are text, not only a color on the field."
+      ]
+    },
+    "related": ["sign-in-with-apple", "settings", "onboarding"]
+  },
+  {
+    "id": "managing-notifications",
+    "title": "Managing notifications",
+    "kind": "pattern",
+    "sourcePath": "/design/human-interface-guidelines/managing-notifications",
+    "summary": "Ask for notification permission after the benefit is clear, and let people reduce notifications later.",
+    "keywords": ["notification", "notifications", "permission", "push"],
+    "whenToUse": ["When a timely event happens that the person asked to hear about."],
+    "whenNotToUse": ["At first launch.", "For marketing that is not time sensitive."],
+    "rules": [
+      {"statement": "Request permission in context, after people understand what they will be told.", "platforms": ["all"]},
+      {"statement": "Every notification should be timely and actionable.", "platforms": ["all"]},
+      {"statement": "Offer in-product controls to quiet categories or turn notifications off.", "platforms": ["all"]},
+      {"statement": "On the web, do not call Notification.requestPermission on load.", "platforms": ["web"]}
+    ],
+    "web": {
+      "element": "button",
+      "variants": ["prompt", "settings"],
+      "cssNotes": [
+        "A button such as Notify me starts the browser permission prompt after a sentence that says what will be sent.",
+        "Settings list each category with a toggle.",
+        "If permission is denied, explain how to turn it back on in the browser instead of asking in a loop."
+      ],
+      "accessibility": [
+        "The pre-prompt is text plus a button, not a surprise dialog.",
+        "Category toggles follow the toggle card."
+      ]
+    },
+    "related": ["privacy", "settings", "toggles"]
+  }
+]

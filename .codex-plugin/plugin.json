@@ -1,0 +1,7 @@
+{
+  "name": "hig",
+  "version": "0.1.0",
+  "description": "Look up Apple's Human Interface Guidelines and original web or native design notes.",
+  "license": "MIT",
+  "mcpServers": "./mcp.json"
+}

@@ -1,0 +1,13 @@
+node_modules/
+.cache/
+*.log
+*.tsbuildinfo
+
+# Workstation-specific settings and internal audit notes
+/.mcp.json
+/.cursor/mcp.json
+/.codex/config.toml
+/PRODUCTION_AUDIT.md
+.env
+.env.*
+!.env.example
