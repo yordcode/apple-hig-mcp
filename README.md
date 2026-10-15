@@ -2,15 +2,11 @@
 
 Bring Apple's Human Interface Guidelines into your AI coding workflow.
 
-**Apple created and publishes the [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines).** This project is inspired by Apple's HIG and helps developers and AI assistants find, understand, and apply that guidance effectively. The contribution here is the MCP integration, search, and practical implementation notes; the underlying design guidance belongs to Apple. This is an independent community project, not an Apple product.
-
 A local [Model Context Protocol](https://modelcontextprotocol.io) server for Apple's [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines). Cursor, Claude, and Codex can search the full guideline catalog, fetch an article as Markdown, and read community implementation notes inspired by Apple HIG for native apps and the web.
 
-Apple's articles stay on Apple's site. This repo commits navigation metadata and community implementation notes. Page text is fetched on demand and cached under `~/.cache/hig/` in your user home directory.
+## Commands
 
-## Tools
-
-| Tool | Purpose |
+| Commands | What it does |
 | --- | --- |
 | `list_topics` | List topics by section, component group, or platform. |
 | `search_hig` | Search titles and aliases such as `modal`, `nav`, and `form`. |
