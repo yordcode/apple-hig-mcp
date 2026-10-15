@@ -13005,8 +13005,8 @@ function registry() {
 var globalRegistry = globalThis.__zod_globalRegistry;
 
 // node_modules/zod/v4/core/compile.js
-var INVALID = Symbol.for("zod.compile.invalid");
-var FALLBACK_FLAG = Symbol.for("zod.compile.fallback");
+var INVALID = /* @__PURE__ */ Symbol.for("zod.compile.invalid");
+var FALLBACK_FLAG = /* @__PURE__ */ Symbol.for("zod.compile.fallback");
 var ZodCompileAsyncError = class extends Error {
   constructor(message = "z.compile does not support async refinements, transforms, or checks") {
     super(message);
@@ -16794,7 +16794,7 @@ var nonoptionalProcessor = (schema, ctx, _json, params) => {
   const seen = ctx.seen.get(schema);
   seen.ref = def.innerType;
 };
-var UNREPRESENTABLE_DEFAULT = Symbol();
+var UNREPRESENTABLE_DEFAULT = /* @__PURE__ */ Symbol();
 function serializeDefaultValue(value, schema, ctx, json2, params) {
   let unrepresentable = false;
   const serialized = JSON.stringify(value, (_, val) => {
@@ -19558,7 +19558,7 @@ function fromJSONSchema(schema, params) {
 }
 
 // node_modules/zod/v4/core/visit.js
-var RESOLVING = Symbol("z.visit/resolving");
+var RESOLVING = /* @__PURE__ */ Symbol("z.visit/resolving");
 function visit(schema, fnOrHandlers) {
   const fn = typeof fnOrHandlers === "function" ? fnOrHandlers : (node2, rewritten) => {
     const h = fnOrHandlers[node2._zod.def.type];
@@ -20721,7 +20721,7 @@ var OAuthTokenRevocationRequestSchema = object({
 }).strip();
 
 // node_modules/@modelcontextprotocol/server/dist/src-Cqbh3MYc.mjs
-var BRANDS = Symbol.for("mcp.sdk.errorBrands");
+var BRANDS = /* @__PURE__ */ Symbol.for("mcp.sdk.errorBrands");
 function stampErrorBrands(instance, ctor) {
   const brands = /* @__PURE__ */ new Set();
   let current = ctor;
@@ -22982,7 +22982,7 @@ var CACHEABLE_RESULT_METHODS = [
 function isCacheableResultMethod(method) {
   return CACHEABLE_RESULT_METHODS.includes(method);
 }
-var RESULT_CACHE_HINT_FALLBACK = Symbol("modelcontextprotocol.resultCacheHintFallback");
+var RESULT_CACHE_HINT_FALLBACK = /* @__PURE__ */ Symbol("modelcontextprotocol.resultCacheHintFallback");
 function attachCacheHintFallback(result, hint) {
   if (hint === void 0) return result;
   const attached = result[RESULT_CACHE_HINT_FALLBACK];
@@ -32595,7 +32595,7 @@ var Ajv = import_ajv.Ajv;
 import process from "node:process";
 
 // node_modules/@modelcontextprotocol/server/dist/mcp-DIH4cS6P.mjs
-var COMPLETABLE_SYMBOL = Symbol.for("mcp.completable");
+var COMPLETABLE_SYMBOL = /* @__PURE__ */ Symbol.for("mcp.completable");
 function isCompletable(schema) {
   return !!schema && typeof schema === "object" && COMPLETABLE_SYMBOL in schema;
 }
@@ -34218,7 +34218,7 @@ function unwrapOptionalSchema(schema) {
 }
 
 // node_modules/@modelcontextprotocol/server/dist/stdio.mjs
-var swallowsErrorsAfterClose = Symbol("swallowsErrorsAfterClose");
+var swallowsErrorsAfterClose = /* @__PURE__ */ Symbol("swallowsErrorsAfterClose");
 var StdioServerTransport = class {
   _readBuffer;
   _started = false;
