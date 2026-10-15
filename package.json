@@ -13,7 +13,16 @@
   "bugs": {
     "url": "https://github.com/yord-dev/apple-hig-mcp/issues"
   },
-  "keywords": ["mcp", "apple", "hig", "design-system", "accessibility", "codex", "claude", "cursor"],
+  "keywords": [
+    "mcp",
+    "apple",
+    "hig",
+    "design-system",
+    "accessibility",
+    "codex",
+    "claude",
+    "cursor"
+  ],
   "engines": {
     "node": ">=20"
   },
@@ -46,6 +55,6 @@
     "esbuild": "^0.25.0",
     "tsx": "^4.20.0",
     "typescript": "^5.9.0",
-    "vitest": "^3.2.0"
+    "vitest": "4.1.11"
   }
 }

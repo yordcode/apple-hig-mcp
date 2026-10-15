@@ -11,3 +11,14 @@ node_modules/
 .env
 .env.*
 !.env.example
+.npmrc
+.aws/
+.ssh/
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+.DS_Store
+Thumbs.db
+Desktop.ini
