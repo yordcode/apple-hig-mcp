@@ -74,32 +74,6 @@ The table shows short slash-command names. Your assistant controls the invocatio
 | Codex user-installed skills | `$hig-web design an accessible settings screen` |
 | Cursor or another MCP prompt client | Select the `hig-web` prompt; the client may add its server namespace. |
 
-Use the same pattern for every workflow, such as `/hig:hig-help` in Claude Code or `$hig:hig-help` in Codex. Both plugin clients add `hig:` to the skill name; the plugin cannot remove their namespace. For exact `/hig-web` and `/hig-help` commands, copy the folders under [`skills/`](skills/) into your Claude user skills directory (`~/.claude/skills/`), keeping each folder name. For short `$hig-web` and `$hig-help` names in Codex, use `~/.agents/skills/`. The HIG MCP server must also be configured. See the [setup guide](docs/GETTING_STARTED.md#command-names-and-invocation).
-
-Version 0.2.0 renames the MCP prompts to `hig-help`, `hig-topic`, `hig-web`, and the other names above. Existing MCP tool names are unchanged. Update the plugin and restart or reload your assistant to discover the new names and bundled skills.
-
-## Tools
-
-| Tool | Purpose |
-| --- | --- |
-| `list_topics` | List topics by section, component group, or platform. |
-| `search_hig` | Search titles and aliases such as `modal`, `nav`, and `form`. |
-| `get_topic` | Fetch one article. Accepts a slug, path, or `developer.apple.com` URL. |
-| `get_design_reference` | Return community implementation notes inspired by Apple's HIG. |
-| `guide_interface` | For a task and platform, return a checklist and the topics to fetch next. |
-| `help` | Show command and workflow guidance. |
-
-`platform` is `web`, `ios`, `ipados`, `macos`, `watchos`, `tvos`, `visionos`, or `all`.
-
-Every `get_topic` result includes the canonical Apple URL and states that the guidelines are published by Apple. Web notes translate hierarchy, targets, type roles, and component behavior into HTML and CSS. They do not reproduce Apple product chrome, and they do not bundle San Francisco or SF Symbols artwork.
-
-## Refresh the catalog
-
-`npm run sync-catalog` rewrites [`catalog/topics.json`](catalog/topics.json) from Apple's DocC index. It stores titles, paths, and section names only. Platform tags live in [`catalog/platforms.json`](catalog/platforms.json), and search aliases live in [`catalog/aliases.json`](catalog/aliases.json). Re-run the sync when Apple adds or renames topics.
-
-Fetched articles are cached for seven days. A failed refresh serves a validated cached copy when one exists. Each Apple request has a ten-second deadline covering the response body. A cache-write failure still returns fresh content.
-
-Simultaneous requests for the same article share one fetch. Parsed caches carry a format version; older formats are refreshed so parser fixes take effect immediately. An older-format cache cannot be used offline until it has been refreshed.
 
 ## Attribution and license
 
